@@ -1,0 +1,32 @@
+{
+  "title": "Blockchain Basics",
+  "description": "Learn the basics of blockchain technology.",
+  "instructor": "John doe",
+  "episodes": [
+    {
+      "id": "understanding-consensus",
+      "title": "Understanding Consensus",
+      "description": "Learn how consensus works in the blockchain world.",
+      "video_url": "https://www.youtube.com/embed/...",
+      "resources_url": "https://...",
+      "questions": [
+        {
+          "id": "understanding-consensus-q1",
+          "text": "Which consensus mechanism uses the most electricity?",
+          "possible_answers": {
+            "a": "Proof of Work",
+            "b": "Proof of Stake",
+            "c": "Delegated Proof of Stake",
+            "d": "Proof of Authority"
+          }
+        }
+      ]
+    }
+  ],
+  "difficulty": 0,
+  "language": "en",
+  "tags": [],
+  "answers": {
+    "understanding-consensus-q1": "a"
+  }
+}
