@@ -80,8 +80,9 @@ export default {
   },
   methods: {
     async setSelectedEpisode(episode) {
-      const index = this.selectedCourse.episodes.findIndex(x => x.id === episode.id);
+      let index = this.selectedCourse.episodes.findIndex(x => x.id === episode.id);
       if(index > this.nextVideo) return;
+      if(!index) index = 0;
 
       await this.$store.dispatch('setSelectedEpisode', episode);
       this.$forceUpdate();

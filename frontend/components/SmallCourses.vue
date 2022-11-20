@@ -42,6 +42,10 @@
   .small-courses {
     padding:100px 100px 0;
 
+    @media only screen and (max-width : 960px) {
+      padding:100px 20px 0;
+    }
+
     .courses {
       display: flex;
       flex-wrap: wrap;
@@ -51,11 +55,20 @@
       column-gap: 30px;
       row-gap: 50px;
 
+      @media only screen and (max-width : 960px) {
+        display:block;
+      }
+
       .course {
         text-transform: uppercase;
         cursor: pointer;
         border-radius:var(--radius);
         width:calc(25% - 23px);
+
+        @media only screen and (max-width : 960px) {
+          width:100%;
+          margin-bottom:30px;
+        }
 
         .image {
           width:100%;

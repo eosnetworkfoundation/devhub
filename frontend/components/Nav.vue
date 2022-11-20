@@ -14,7 +14,7 @@
       </section>
       <section class="account" v-if="loading"></section>
       <section class="account" v-else>
-        <Button v-if="!user" @click.native="signIn">Sign in</Button>
+        <Button v-if="!user" @click.native="signIn">Login</Button>
         <section v-else>
           <section class="profile">
             <figure class="avatar" @click="menuOpen = !menuOpen">
@@ -84,6 +84,8 @@
     height:104px;
   }
 
+  $breakpoint:960px;
+
   nav {
     position: fixed;
     width:100vw;
@@ -94,6 +96,10 @@
     background:#fff;
     z-index: var(--nav-index);
     height:104px;
+
+    @media only screen and (max-width : 960px) {
+      padding:20px 20px;
+    }
 
     .logo {
       width:40px;
@@ -107,6 +113,10 @@
       align-items: center;
       justify-content: flex-start;
 
+      @media only screen and (max-width : $breakpoint) {
+        padding:0 20px 0 10px;
+      }
+
       .link {
         margin:0 15px;
         padding:10px;
@@ -118,6 +128,12 @@
 
         transition: color 0.2s ease;
 
+        @media only screen and (max-width : $breakpoint) {
+          font-size:1rem;
+          margin:0 5px;
+          padding:10px;
+        }
+
 
         &.nuxt-link-exact-active, &:hover {
           color:var(--color-primary);
@@ -128,7 +144,12 @@
     .account {
       button {
         height:64px;
+        @media only screen and (max-width : $breakpoint) {
+          height:40px;
+          padding: 0 10px;
+        }
       }
+
 
       .profile {
         display:flex;
@@ -145,6 +166,11 @@
           background:rgba(0,0,0,0.1);
           overflow: hidden;
 
+          @media only screen and (max-width : $breakpoint) {
+            width:40px;
+            height:40px;
+          }
+
           img {
             width:100%;
             height:100%;
@@ -154,6 +180,10 @@
 
         .chevron {
           padding-left:20px;
+
+          @media only screen and (max-width : $breakpoint) {
+            display:none;
+          }
 
           svg {
             transition: transform 0.2s ease;

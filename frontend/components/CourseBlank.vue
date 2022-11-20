@@ -38,10 +38,15 @@ export default {
     padding:30px;
     border-radius: var(--radius);
     box-shadow:0 0 0 1px rgba(0,0,0,0.1);
-    width:calc(33.33333% - 20px);
+    //width:calc(33.33333% - 20px);
+    width:100%;
 
     display:flex;
     flex-direction: column;
+
+    @media only screen and (max-width : 960px) {
+      margin-bottom: 10px;
+    }
 
     .title {
       font-size: 1.3rem;

@@ -2,7 +2,9 @@
   <footer>
     <section>
       <section class="logo">
-        <img src="@/assets/logo_white.png" alt="logo" />
+        <a href="https://eosnetwork.com">
+          <img src="@/assets/logo_white.png" alt="logo" />
+        </a>
       </section>
 
       <section class="middle">

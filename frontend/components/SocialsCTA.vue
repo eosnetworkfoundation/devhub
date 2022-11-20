@@ -20,6 +20,11 @@
     text-align:center;
     padding:180px 30px 40px;
 
+    @media only screen and (max-width : 960px) {
+      max-width:100%;
+      display:block;
+    }
+
     p {
       margin:30px 0;
       max-width:800px;
@@ -32,6 +37,15 @@
       button {
         svg {
           margin-right:10px;
+        }
+      }
+
+      @media only screen and (max-width : 960px) {
+        display:block;
+
+        button {
+          width:100%;
+          margin:0 0 10px;
         }
       }
     }

@@ -71,6 +71,10 @@ export default {
     background:#fff;
     border-bottom:1px solid rgba(0,0,0,0.1);
 
+    @media only screen and (max-width : 960px) {
+      display: block;
+    }
+
     min-height:50vh;
 
     .inner-container {
@@ -101,6 +105,15 @@ export default {
         gap:20px;
         align-items: center;
         justify-content: center;
+
+        @media only screen and (max-width : 960px) {
+          display: block;
+
+          button {
+            width:100%;
+            margin-bottom:10px;
+          }
+        }
       }
     }
 

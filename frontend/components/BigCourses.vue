@@ -38,6 +38,10 @@
   .big-courses {
     padding:100px 100px 0;
 
+    @media only screen and (max-width : 960px) {
+      padding:100px 20px 0;
+    }
+
     .courses {
       display: flex;
       flex-wrap: wrap;
@@ -47,11 +51,20 @@
       column-gap: 30px;
       row-gap: 50px;
 
+      @media only screen and (max-width : 960px) {
+        display:block;
+      }
+
       .course {
         flex:1;
         cursor: pointer;
         position: relative;
         width:calc(50% - 15px);
+
+        @media only screen and (max-width : 960px) {
+          width:100%;
+          margin-bottom:30px;
+        }
 
         .image {
           position:relative;

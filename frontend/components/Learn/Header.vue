@@ -45,6 +45,10 @@
     background:#fff;
     border-bottom:1px solid rgba(0,0,0,0.1);
 
+    @media only screen and (max-width : 960px) {
+      display:block;
+    }
+
 
     .cta-container {
       flex:1;
@@ -52,6 +56,10 @@
 
       .padder {
         padding:60px 100px;
+
+        @media only screen and (max-width : 960px) {
+          padding:60px 20px;
+        }
       }
 
       p {
@@ -65,6 +73,15 @@
         button {
           margin:0 8px;
           padding:0 80px;
+        }
+
+        @media only screen and (max-width : 960px) {
+          display:block;
+
+          button {
+            width:100%;
+            margin:0 0 10px;
+          }
         }
       }
     }

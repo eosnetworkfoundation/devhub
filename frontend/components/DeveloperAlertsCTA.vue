@@ -38,6 +38,12 @@ export default {
     text-align:center;
     padding:180px 30px 40px;
 
+    @media only screen and (max-width : 960px) {
+      max-width:100%;
+      display:block;
+      padding:180px 20px 40px;
+    }
+
     p {
       margin:30px 0;
       max-width:800px;
@@ -48,6 +54,10 @@ export default {
       justify-content: center;
       align-items: center;
 
+      @media only screen and (max-width : 960px) {
+        display:block;
+      }
+
       .input {
         height:74px;
         display:flex;
@@ -56,6 +66,11 @@ export default {
         border-bottom-left-radius:var(--radius);
         padding:0 30px;
         min-width: 300px;
+
+        @media only screen and (max-width : 960px) {
+          width:100%;
+          min-width: 0;
+        }
 
         .icon {
           width:30px;
@@ -77,6 +92,11 @@ export default {
       }
       button {
         flex:0 0 auto;
+
+        @media only screen and (max-width : 960px) {
+          width:100%;
+          margin-top:10px;
+        }
       }
     }
   }

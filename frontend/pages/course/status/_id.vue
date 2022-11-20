@@ -115,6 +115,10 @@ export default {
   .info {
     padding:100px 30px;
 
+    @media only screen and (max-width : 960px) {
+      padding: 100px 20px;
+    }
+
     h2 {
       margin-bottom:20px;
     }
@@ -125,6 +129,10 @@ export default {
       box-shadow:0 0 0 1px rgba(0,0,0,0.1);
       border-radius:var(--radius);
       background:var(--color-primary-negative);
+
+      @media only screen and (max-width : 960px) {
+        padding:20px;
+      }
 
       p {
         margin-top:20px;

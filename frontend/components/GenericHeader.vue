@@ -44,6 +44,11 @@
     background:#fff;
     border-bottom:1px solid rgba(0,0,0,0.1);
 
+    @media only screen and (max-width : 960px) {
+      padding:120px 20px;
+      display: block;
+    }
+
     min-height:50vh;
 
     .inner-container {

@@ -41,6 +41,10 @@
     cursor: pointer;
     width:100%;
 
+    @media only screen and (max-width : 960px) {
+      display: block;
+    }
+
     &.un-clickable {
       cursor: not-allowed;
       opacity: 0.2;
@@ -87,6 +91,12 @@
       flex:2;
       padding:30px;
       align-self: center;
+
+      @media only screen and (max-width : 960px) {
+        padding:0;
+        margin-top:20px;
+        margin-bottom:50px;
+      }
 
       .title {
         font-size: 1.5rem;

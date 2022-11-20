@@ -59,6 +59,11 @@ export default {
   display:flex;
   margin-bottom:150px;
 
+  @media only screen and (max-width : 960px) {
+    display: block;
+  }
+
+
   .image {
     flex:1;
     border-radius: var(--radius);
@@ -75,6 +80,12 @@ export default {
     justify-content: center;
     padding: 0 0 0 50px;
     flex:1;
+
+    @media only screen and (max-width : 960px) {
+      width:100%;
+      padding:0;
+      margin-top:20px;
+    }
 
     .title {
       font-size: 1.8rem;
