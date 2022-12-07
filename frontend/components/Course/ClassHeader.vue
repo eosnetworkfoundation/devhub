@@ -2,7 +2,9 @@
   <section class="course-class-header">
     <section class="inner-container" v-if="selectedCourse">
       <h1><b>{{ selectedCourse.title }}</b></h1>
-      <h3>Instructor: {{ selectedCourse.instructor }}</h3>
+      <a :href="selectedCourse.instructor_link" target="_blank" rel="noopener noreferrer">
+        <h3>Instructor: {{ selectedCourse.instructor }}</h3>
+      </a>
 
       <p>{{ selectedCourse.description }}</p>
 
