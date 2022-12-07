@@ -6,9 +6,9 @@
 <!--    <SocialsCTA />-->
 <!--    <BigCourses v-if="courses && courses.essential" category="Essential courses" :courses="courses.essential.slice(0, 2)" />-->
     <SmallCourses v-if="courses && courses.length" category="Popular courses" :courses="courses.slice(0, 4)" />
-    <DeveloperAlertsCTA />
-    <SmallCourses v-if="courses && courses.length > 4" category="Go deeper" :courses="courses.slice(4, courses.length)" />
     <SocialsCTA />
+    <SmallCourses v-if="courses && courses.length > 4" category="Go deeper" :courses="courses.slice(4, courses.length)" />
+    <DeveloperAlertsCTA />
   </section>
 </template>
 
