@@ -22,7 +22,7 @@
       <section v-if="unfinishedCourses.length">
         <figure class="course-category">Keep learning</figure>
         <section class="courses">
-          <NuxtLink :to="`course/`" :key="progress.course.course_slug_hash" v-for="progress in unfinishedCourses">
+          <NuxtLink :to="`/course/${progress.course.slug}`" :key="progress.course.course_slug_hash" v-for="progress in unfinishedCourses">
             <CourseBlank :withPercentage="true"
                          :title="progress.course.title"
                          :description="progress.course.description" />
@@ -33,7 +33,7 @@
       <section v-if="finishedCourses.length">
         <figure class="course-category">Completed courses</figure>
         <section class="courses">
-          <NuxtLink :to="`course/`" :key="progress.course.course_slug_hash" v-for="progress in finishedCourses">
+          <NuxtLink :to="`/course/${progress.course.slug}`" :key="progress.course.course_slug_hash" v-for="progress in finishedCourses">
             <CourseBlank :withPercentage="true"
                          :percentage="progress.score"
                          :title="progress.course.title"
