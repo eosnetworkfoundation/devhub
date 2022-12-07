@@ -42,6 +42,7 @@ export class Course {
     public language:string = "en";
     public tags:Array<string> = [];
     public instructor:string = "";
+    public instructor_link:string = "";
     public thumbnail:string = "";
 
     public answers:{[question_id:string]:number} = {};

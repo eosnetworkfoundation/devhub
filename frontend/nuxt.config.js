@@ -56,8 +56,8 @@ export default {
       auth0: {
         domain: 'devhub.us.auth0.com',
         clientId: 'C3CbaWj25DapUHSYarwKWAvGT1StkIgM',
-        logoutRedirectUri: 'http://localhost:3000',
-        redirectUri: 'http://localhost:3000',
+        logoutRedirectUri: 'https://learn.eosnetwork.com',
+        redirectUri: 'https://learn.eosnetwork.com',
       }
     }
   },
