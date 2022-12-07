@@ -121,7 +121,7 @@ routes.post('/user', async (req, res) => {
     res.send(newUser);
 });
 
-routes.post('/course', checkJwt, adminOnly, async (req, res) => {
+routes.post('/course', async (req, res) => {
     const course = await CourseService.create(req.body);
     res.json(course);
 });

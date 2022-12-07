@@ -78,13 +78,13 @@ export default {
         route:'https://eosnetwork.com/blog/the-road-to-10k-growing-the-eos-discord-community/',
         image:`https://eosnetwork.com/wp-content/uploads/2022/08/Road_To_10k-1024x576.png`,
       },
-      {
-        title:'Compete for prizes',
-        description:"Take part in online hackathons where you can with $125k in prizes",
-        buttonText:"Find out more",
-        route:'https://eosnetwork.com/blog/evmxideathon-dream-it-build-it/',
-        image:`https://eosnetwork.com/wp-content/uploads/2022/08/hackathon-1024x576.png`,
-      }
+      // {
+      //   title:'Compete for prizes',
+      //   description:"Take part in online hackathons where you can with $125k in prizes",
+      //   buttonText:"Find out more",
+      //   route:'https://eosnetwork.com/blog/evmxideathon-dream-it-build-it/',
+      //   image:`https://eosnetwork.com/wp-content/uploads/2022/08/hackathon-1024x576.png`,
+      // }
     ].sort( () => .5 - Math.random() )
   }}
 }

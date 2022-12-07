@@ -1,12 +1,14 @@
 <template>
   <section>
     <LearnHeader v-on:start="watchFirstVideo" />
-    <SmallCourses v-if="continueWatching" category="Continue learning" :courses="continueWatching.slice(0, 4)" />
-    <SmallCourses v-if="courses && courses.popular" category="Popular courses" :courses="courses.popular.slice(0, 4)" />
-    <SocialsCTA />
-    <BigCourses v-if="courses && courses.essential" category="Essential courses" :courses="courses.essential.slice(0, 2)" />
+<!--    <SmallCourses v-if="continueWatching" category="Continue learning" :courses="continueWatching.slice(0, 4)" />-->
+<!--    <SmallCourses v-if="courses && courses.popular" category="Popular courses" :courses="courses.popular.slice(0, 4)" />-->
+<!--    <SocialsCTA />-->
+<!--    <BigCourses v-if="courses && courses.essential" category="Essential courses" :courses="courses.essential.slice(0, 2)" />-->
+    <SmallCourses v-if="courses && courses.length" category="Popular courses" :courses="courses.slice(0, 4)" />
     <DeveloperAlertsCTA />
-    <SmallCourses v-if="leftOverCourses && leftOverCourses.length" category="Go deeper" :courses="leftOverCourses" />
+    <SmallCourses v-if="courses && courses.length > 4" category="Go deeper" :courses="courses.slice(4, courses.length)" />
+    <SocialsCTA />
   </section>
 </template>
 
@@ -28,8 +30,17 @@ export default {
     }
   },
   async fetch() {
-    this.courses = await this.$api.getCourses();
-    this.continueWatching = await this.$api.getContinueWatching();
+    let allCourses = await this.$api.getCourses();
+    allCourses = allCourses.courses.concat(allCourses.popular).concat(allCourses.essential);
+    this.courses = allCourses.reduce((acc, course) => {
+      if(acc.find(c => c.slug === course.slug)) return acc;
+      acc.push(course);
+      return acc;
+    }, []).sort((a, b) => a.difficulty - b.difficulty);
+    console.log('allCourses', allCourses);
+    // this.courses = await this.$api.getCourses();
+    // console.log('this.courses', this.courses);
+    // this.continueWatching = await this.$api.getContinueWatching();
   },
   methods:{
     watchFirstVideo(){

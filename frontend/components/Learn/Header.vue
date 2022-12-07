@@ -16,9 +16,14 @@
       </section>
     </section>
 
-    <section class="video">
+    <figure class="video">
+      <!--        <section class="image" :style="{'background-image':`url(https://img.youtube.com/vi/RsSZ0PxfioY/hqdefault.jpg)`}">-->
+      <!--          &lt;!&ndash;          <figure class="tag">New</figure>&ndash;&gt;-->
+      <!--          <figure class="play"><SvgPlay /></figure>-->
+      <!--        </section>-->
+      <figure @click="goToBasicsCourse" class="video-over-click"></figure>
       <iframe :src="video_url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>
+    </figure>
   </section>
 </template>
 
@@ -28,7 +33,13 @@
     props: {
       video_url: {
         type: String,
-        default: 'https://www.youtube.com/embed/YZmTEuOdffs'
+        default: 'https://www.youtube.com/embed/RsSZ0PxfioY'
+      }
+    },
+    methods: {
+      goToBasicsCourse() {
+
+        this.$router.push('/course/getting-started-with-eos')
       }
     }
   }
@@ -92,11 +103,72 @@
       background:var(--color-primary);
       min-height:100%;
       align-self: stretch;
+      position: relative;
+
+      .video-over-click {
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        z-index:1;
+        cursor:pointer;
+      }
 
       iframe, video {
         width: 100%;
         height: 100%;
         border: 0;
+      }
+
+      .image {
+        width:100%;
+        aspect-ratio: 16 / 9;
+        border-radius:var(--radius);
+        overflow: hidden;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+
+        .play {
+          position:absolute;
+          top:0;
+          bottom:0;
+          left:0;
+          right:0;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          background:rgba(0,0,0,0.4);
+          opacity:0;
+
+          transition: opacity 0.1s ease;
+
+          svg {
+            width:40px;
+            fill:#fff;
+          }
+        }
+      }
+
+      &:hover {
+        .play {
+          opacity:1;
+        }
+      }
+
+      .info {
+        margin-top:15px;
+
+        .title {
+          font-size:1.2rem;
+          font-family: "SuisseIntlBold", sans-serif;
+          margin-bottom:10px;
+        }
+
+        p {
+          font-size: 1rem;
+        }
       }
     }
   }

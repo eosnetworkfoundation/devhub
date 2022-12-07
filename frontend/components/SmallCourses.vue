@@ -9,8 +9,8 @@
             <figure class="play"><SvgPlay /></figure>
           </section>
           <section class="info">
-            <figure class="title">{{ course.title }}</figure>
-            <p>{{ course.description }}</p>
+            <figure class="title text-single-line">{{ course.title }}</figure>
+            <p class="text-limiter">{{ course.description }}</p>
           </section>
         </NuxtLink>
 
