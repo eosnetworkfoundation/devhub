@@ -5,7 +5,7 @@
       <section class="course" :key="course.slug_hash" v-for="course in courses">
         <NuxtLink :to="`/course/${course.slug}`">
           <section class="image" :style="{'background-image':`url(${$common.thumbnail(course)})`}">
-            <!--          <figure class="tag">New</figure>-->
+            <figure v-if="course.tags && course.tags.length" class="tag">{{course.tags[0]}}</figure>
             <figure class="play"><SvgPlay /></figure>
           </section>
           <section class="info">
