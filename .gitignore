@@ -105,3 +105,9 @@ dist
 
 # IntelliJ IDEA
 .idea
+
+# archives
+*.7z
+*.tar
+*.tar.gz
+*.zip
