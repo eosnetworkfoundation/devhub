@@ -8,6 +8,7 @@
   "license": "ISC",
   "engineStrict": true,
   "engines": {
+    "node": "16",
     "yarn": "1"
   },
   "scripts": {
