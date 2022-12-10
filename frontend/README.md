@@ -13,6 +13,10 @@ Install dependencies.
 ```bash
 yarn
 ```
+Set `BACKEND_API` in your shell environment.
+```
+export BACKEND_API='https://example.com'
+```
 
 ```bash
 # serve with hot reload at localhost:3000
