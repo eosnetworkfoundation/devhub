@@ -16,7 +16,7 @@ Install dependencies.
 yarn
 ```
 Set `BACKEND_API` in your shell environment.
-```
+```bash
 export BACKEND_API='https://example.com'
 ```
 
