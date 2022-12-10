@@ -1,7 +1,9 @@
 # Frontend
 EOS Network Foundation DevHub portal website frontend for [learn.eosnetwork.com](https://learn.eosnetwork.com).
 
-## Build Setup
+## Development
+Once you have the [prerequisites](../README.md#prerequisites) installed, start here.
+
 ```bash
 # install dependencies
 $ yarn install
