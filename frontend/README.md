@@ -27,6 +27,17 @@ yarn generate
 ```
 You can view the results by opening `./dist/index.html` in your web browser.
 
+### Dynamic Hosting
+Build the frontend for dynamic hosting, where a nodeJS server sends clients rendered HTML at runtime.
+```bash
+yarn build
+```
+Start a local server with hot reload to view your work.
+```bash
+yarn start
+```
+The site will be available at [localhost:3000](http://localhost:3000) in your web browser.
+
 ## Special Directories
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
 
