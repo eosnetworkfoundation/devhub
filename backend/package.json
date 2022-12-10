@@ -4,6 +4,7 @@
   "description": "EOS Network Foundation DevHub portal website backend",
   "main": "index.js",
   "repository": "https://github.com/eosnetworkfoundation/devhub",
+  "homepage": "https://learn.eosnetwork.com",
   "keywords": [],
   "author": "",
   "license": "MIT",
