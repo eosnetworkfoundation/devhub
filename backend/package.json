@@ -5,7 +5,11 @@
   "main": "index.js",
   "repository": "https://github.com/eosnetworkfoundation/devhub",
   "homepage": "https://learn.eosnetwork.com",
-  "author": "",
+  "author": {
+    "name": "EOS Network Foundation",
+    "email": "support@eosnetwork.com",
+    "url": "https://eosnetwork.com"
+  },
   "license": "MIT",
   "engineStrict": true,
   "engines": {

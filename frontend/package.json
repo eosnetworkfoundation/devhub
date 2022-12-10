@@ -4,6 +4,11 @@
   "description": "EOS Network Foundation DevHub portal website frontend",
   "repository": "https://github.com/eosnetworkfoundation/devhub",
   "homepage": "https://learn.eosnetwork.com",
+  "author": {
+    "name": "EOS Network Foundation",
+    "email": "support@eosnetwork.com",
+    "url": "https://eosnetwork.com"
+  },
   "license": "MIT",
   "private": true,
   "engineStrict": true,
