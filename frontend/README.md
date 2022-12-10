@@ -4,10 +4,17 @@ EOS Network Foundation DevHub portal website frontend for [learn.eosnetwork.com]
 ## Development
 Once you have the [prerequisites](../README.md#prerequisites) installed, start here.
 
+### Initialization
+Automatically switch to the correct version of nodeJS.
 ```bash
-# install dependencies
-$ yarn install
+nvm use
+```
+Install dependencies.
+```bash
+yarn
+```
 
+```bash
 # serve with hot reload at localhost:3000
 $ yarn dev
 
