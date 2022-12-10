@@ -20,3 +20,9 @@ Build the backend.
 ```bash
 yarn build
 ```
+
+### Test
+Test the backend.
+```bash
+yarn test
+```
