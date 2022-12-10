@@ -3,11 +3,18 @@ This repository contains the source code for the EOS Network Foundation DevHub l
 
 #### Index
 1. [Architecture](#architecture)
+    1. [Components](#components)
 1. [Development](#development)
     1. [Prerequisites](#prerequisites)
 
 ## Architecture
 TAMO - then a miracle occured!
+
+### Components
+The website has the following high-level components.
+- [backend](./backend/README.md) - server-side code
+- [frontend](./frontend/README.md) - client-side code
+- [structures](./structures/README.md) - schema
 
 ## Development
 Start here to contribute to this repo.
