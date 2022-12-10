@@ -1,4 +1,5 @@
 # frontend
+EOS Network Foundation DevHub portal website frontend for [learn.eosnetwork.com](https://learn.eosnetwork.com).
 
 ## Build Setup
 

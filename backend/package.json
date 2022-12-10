@@ -1,10 +1,15 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "EOS Network Foundation DevHub portal website backend",
   "main": "index.js",
-  "keywords": [],
-  "author": "",
+  "repository": "https://github.com/eosnetworkfoundation/devhub",
+  "homepage": "https://learn.eosnetwork.com",
+  "author": {
+    "name": "EOS Network Foundation",
+    "email": "support@eosnetwork.com",
+    "url": "https://eosnetwork.com"
+  },
   "license": "MIT",
   "engineStrict": true,
   "engines": {
