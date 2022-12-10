@@ -20,17 +20,12 @@ Set `BACKEND_API` in your shell environment.
 export BACKEND_API='https://example.com'
 ```
 
+### Static Hosting
+Build the frontend for static hosting. Routes are generated at build-time, then the site is rendered client-side at runtime.
 ```bash
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+yarn generate
 ```
+You can view the results by opening `./dist/index.html` in your web browser.
 
 ## Special Directories
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
