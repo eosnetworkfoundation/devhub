@@ -5,7 +5,6 @@
   "main": "index.js",
   "repository": "https://github.com/eosnetworkfoundation/devhub",
   "homepage": "https://learn.eosnetwork.com",
-  "keywords": [],
   "author": "",
   "license": "MIT",
   "engineStrict": true,
