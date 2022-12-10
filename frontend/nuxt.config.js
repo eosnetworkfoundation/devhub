@@ -64,7 +64,7 @@ export default {
   },
 
   publicRuntimeConfig: {
-    BACKEND_API: process.env.BACKEND_API || 'http://localhost:3001'
+    BACKEND_API: process.env.DEVHUB_BACKEND_API || 'http://localhost:3001'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

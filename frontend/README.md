@@ -15,9 +15,9 @@ Install dependencies.
 ```bash
 yarn
 ```
-Set `BACKEND_API` in your shell environment.
+Set `DEVHUB_BACKEND_API` in your shell environment, if not using localhost:3001.
 ```bash
-export BACKEND_API='https://example.com'
+export DEVHUB_BACKEND_API='https://example.com'
 ```
 
 ### Static Hosting
