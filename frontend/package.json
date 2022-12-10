@@ -4,6 +4,7 @@
   "private": true,
   "engineStrict": true,
   "engines": {
+    "yarn": "1"
   },
   "scripts": {
     "dev": "nuxt",

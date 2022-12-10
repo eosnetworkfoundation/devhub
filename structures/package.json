@@ -6,6 +6,7 @@
   "license": "ISC",
   "engineStrict": true,
   "engines": {
+    "yarn": "1"
   },
   "scripts": {
     "build": "tsc"
