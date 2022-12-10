@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "build": "npx tsc",
     "run": "node dist/index.js",
@@ -11,9 +14,6 @@
     "test:file": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha --timeout 100000000 -r ts-node/register",
     "relink": "rm -rf node_modules && yarn"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@eosn/devhub-structures": "file:../structures/dist",
     "body-parser": "^1.20.0",
