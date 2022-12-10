@@ -2,6 +2,7 @@
   "name": "@eosn/devhub-structures",
   "version": "1.0.0",
   "description": "EOS Network Foundation DevHub portal website schema definition for the backend",
+  "repository": "https://github.com/eosnetworkfoundation/devhub",
   "author": "",
   "license": "MIT",
   "engineStrict": true,
