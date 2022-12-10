@@ -13,3 +13,9 @@ Install dependencies.
 ```bash
 yarn
 ```
+
+### Build
+Generate the type definitions and schema.
+```bash
+yarn build
+```
