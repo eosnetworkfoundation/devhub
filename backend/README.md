@@ -14,3 +14,9 @@ Install dependencies.
 yarn
 ```
 Use the `.env.example` file as a template to create a `.env` file with configurations for the backend.
+
+### Build
+Build the backend.
+```bash
+yarn build
+```
