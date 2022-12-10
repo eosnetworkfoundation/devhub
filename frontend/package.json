@@ -2,6 +2,9 @@
   "name": "frontend",
   "version": "1.0.0",
   "private": true,
+  "engineStrict": true,
+  "engines": {
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

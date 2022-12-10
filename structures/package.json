@@ -4,6 +4,9 @@
   "description": "",
   "author": "",
   "license": "ISC",
+  "engineStrict": true,
+  "engines": {
+  },
   "scripts": {
     "build": "tsc"
   },

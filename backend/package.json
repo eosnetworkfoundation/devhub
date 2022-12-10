@@ -6,6 +6,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engineStrict": true,
+  "engines": {
+  },
   "scripts": {
     "build": "npx tsc",
     "run": "node dist/index.js",
