@@ -2,14 +2,19 @@
   "name": "@eosn/devhub-structures",
   "version": "1.0.0",
   "description": "",
+  "author": "",
+  "license": "ISC",
+  "engineStrict": true,
+  "engines": {
+    "node": "16",
+    "yarn": "1"
+  },
   "scripts": {
     "build": "tsc"
   },
   "files": [
     "/dist"
   ],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "typescript": "^4.7.4"
   }
