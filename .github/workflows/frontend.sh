@@ -10,10 +10,10 @@ function ee()
 # print debugging code
 ee node --version
 ee yarn --version
-if [[ ! -z "$BACKEND_API" ]]; then
-    ee 'printf "$BACKEND_API" | wc -c'
+if [[ ! -z "$DEVHUB_BACKEND_API" ]]; then
+    ee 'printf "$DEVHUB_BACKEND_API" | wc -c'
 else
-    printf '\e[93mWARNING: BACKEND_API is not defined!\e[0m\n'
+    printf '\e[93mWARNING: DEVHUB_BACKEND_API is not defined!\e[0m\n'
 fi
 # init
 ee pushd frontend
