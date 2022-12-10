@@ -4,6 +4,8 @@ EOS Network Foundation DevHub portal website frontend for [learn.eosnetwork.com]
 ## Development
 Once you have the [prerequisites](../README.md#prerequisites) installed, start here.
 
+For detailed explanation on how things work, check out the [nuxtJS documentation](https://nuxtjs.org).
+
 ### Initialization
 Automatically switch to the correct version of nodeJS.
 ```bash
@@ -29,8 +31,6 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-For detailed explanation on how things work, check out the [nuxtJS documentation](https://nuxtjs.org).
 
 ## Special Directories
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
