@@ -45,7 +45,7 @@ export default {
   methods:{
     watchFirstVideo(){
       // TODO: Fix continue watching
-      this.$router.push(`course/${this.courses.essential[0].slug}`);
+      this.$router.push(`course/${this.courses[0].slug}`);
     }
   }
 }
