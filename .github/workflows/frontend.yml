@@ -19,6 +19,8 @@ jobs:
 
       - name: Frontend Build - nodeJS v${{ matrix.node-version }}
         run: .github/workflows/frontend.sh
+        env:
+          DEVHUB_BACKEND_API: ${{ secrets.DEVHUB_BACKEND_API }}
 
       - uses: actions/upload-artifact@v3
         with:
