@@ -13,10 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Frontend Build - nodeJS v${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Frontend Build - nodeJS v${{ matrix.node-version }}
         run: .github/workflows/frontend.sh
 
       - uses: actions/upload-artifact@v3
