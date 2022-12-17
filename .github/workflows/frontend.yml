@@ -10,19 +10,24 @@ jobs:
       matrix:
         node-version: [16]
 
-    steps:
-      - uses: actions/checkout@v3
+    name: Static Frontend Build - nodeJS v${{ matrix.node-version }}
 
-      - uses: actions/setup-node@v3
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup node v${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Frontend Build - nodeJS v${{ matrix.node-version }}
+      - name: Static Frontend Build - node v${{ matrix.node-version }}
         run: .github/workflows/frontend.sh
         env:
           DEVHUB_BACKEND_API: ${{ secrets.DEVHUB_BACKEND_API }}
 
-      - uses: actions/upload-artifact@v3
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
         with:
           name: dist-node-${{ matrix.node-version }}
           path: frontend/dist.tar.gz
