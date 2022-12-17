@@ -12,6 +12,8 @@ ee node --version
 ee yarn --version
 if [[ ! -z "$DEVHUB_BACKEND_API" ]]; then
     ee 'printf "$DEVHUB_BACKEND_API" | wc -c'
+    ee 'curl -fsSL "$DEVHUB_BACKEND_API/test"'
+    echo
 else
     printf '\e[93mWARNING: DEVHUB_BACKEND_API is not defined!\e[0m\n'
 fi
@@ -19,7 +21,7 @@ fi
 ee pushd frontend
 ee yarn --frozen-lockfile
 # generate static site
-ee yarn generate
+ee yarn generate --fail-on-error
 # pack dist folder
-ee tar -cvf dist.tar.gz dist/*
+ee 'tar -cf dist.tar.gz dist/*'
 echo 'Done! - frontend.sh'
