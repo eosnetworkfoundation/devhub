@@ -41,7 +41,7 @@ jobs:
       contents: read
     steps:
       - name: Authenticate to AWS
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v1-node16
         with:
           aws-region: us-east-1
           role-to-assume: ${{ secrets.DEVHUB_FRONTEND_RO_IAM_ARN }}
