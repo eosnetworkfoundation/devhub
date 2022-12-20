@@ -42,8 +42,6 @@ jobs:
         with:
           aws-region: us-east-1
           role-to-assume: ${{ secrets.DEVHUB_FRONTEND_RO_IAM_ARN }}
-          role-session-name: OIDCSession
-          role-duration-seconds: 300
 
       - name: Authentication Test
         run: aws s3 ls
