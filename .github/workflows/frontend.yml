@@ -33,6 +33,7 @@ jobs:
           path: frontend/dist.tar.gz
 
   aws:
+    name: AWS Authentication
     runs-on: ubuntu-latest
     needs: build
     steps:
