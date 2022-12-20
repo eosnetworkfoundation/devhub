@@ -31,3 +31,18 @@ jobs:
         with:
           name: dist-node-${{ matrix.node-version }}
           path: frontend/dist.tar.gz
+
+  aws:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Authenticate to AWS
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-east-1
+          role-to-assume: ${{ secrets.DEVHUB_FRONTEND_RO_IAM_ARN }}
+          role-session-name: OIDCSession
+          role-duration-seconds: 300
+
+      - name: Authentication Test
+        run: aws s3 ls
