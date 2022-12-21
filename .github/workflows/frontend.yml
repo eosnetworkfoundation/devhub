@@ -47,7 +47,7 @@ jobs:
           role-to-assume: ${{ secrets.DEVHUB_FRONTEND_RO_IAM_ARN }}
           role-duration-seconds: 900
 
-      - name: Download Artifacts
+      - name: Download Matrix Artifacts
         uses: actions/download-artifact@v3
 
       - name: Debug Step
