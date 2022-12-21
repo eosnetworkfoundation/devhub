@@ -52,3 +52,4 @@ jobs:
 
       - name: Debug Step
         run: ls -la
+        run: tree
