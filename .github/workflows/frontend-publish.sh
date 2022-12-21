@@ -46,4 +46,7 @@ if [[ "$DRY_RUN" != 'false' ]]; then
     export S3_SYNC="$S3_SYNC --dryrun"
 fi
 ee "$S3_SYNC"
+echo 'Tagging website objects.'
+ee 'aws s3api list-objects --bucket "$S3_BUCKET" --query "Contents[].{Key:Key}" --output text'
+ee 'aws s3api list-objects-v2 --bucket "$S3_BUCKET" --query "Contents[].{Key:Key}" --output text'
 echo 'Done! - frontend-publish.sh'
