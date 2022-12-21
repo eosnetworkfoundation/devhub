@@ -54,7 +54,8 @@ ee 'echo "$TAGS" | jq .'
 export S3_LIST='aws s3api list-objects-v2 --bucket "$S3_BUCKET" --query "Contents[].{Key:Key}" --output text'
 export S3_TAG='xargs -I OBJECT -- aws s3api put-object-tagging --bucket "$S3_BUCKET" --key OBJECT --tagging "TagSet=[{Key=colour,Value=blue}]"'
 if [[ "$DRY_RUN" != 'false' ]]; then
-    ee "$S3_LIST | $S3_TAG \"TagSet=$(echo "$TAGS" | jq -c 'to_entries')\" --dryrun"
+    echo 'AWS CLI dry run support is inconsistent and this command does not have it, printing object tag command with no dry run.'
+    echo "$S3_LIST | $S3_TAG \"TagSet=$(echo "$TAGS" | jq -c 'to_entries')\""
 else
     ee "$S3_LIST | $S3_TAG \"TagSet=$(echo "$TAGS" | jq -c 'to_entries')\""
 fi
