@@ -7,4 +7,4 @@ else
     echo "Found git $GITHUB_REF_TYPE \"$GITHUB_REF_NAME,\" performing a dry-run."
     echo "::set-output name=arn::$DEVHUB_FRONTEND_RO_IAM_ARN"
 fi
-echo 'Done. - aws-role.sh'
+echo 'Done. - frontend-aws-role.sh'
