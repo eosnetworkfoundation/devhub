@@ -10,6 +10,7 @@ function ee()
 # print debugging code
 ee node --version
 ee yarn --version
+ee npm --version
 if [[ ! -z "$DEVHUB_BACKEND_API" ]]; then
     ee 'printf "$DEVHUB_BACKEND_API" | wc -c'
     ee 'curl -fsSL "$DEVHUB_BACKEND_API/test"'
