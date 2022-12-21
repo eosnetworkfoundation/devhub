@@ -22,6 +22,7 @@ cat ../../frontend/package.json | jq -c \
     --arg build "$GITHUB_RUN_NUMBER" \
     --arg build_id "$GITHUB_RUN_ID" \
     --arg commit "$(git rev-parse HEAD)" \
+    --arg email "$(git log -n 1 --pretty=format:%ae)" \
     --arg ref_type "$GITHUB_REF_TYPE" \
     --arg repo "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" \
     --arg tag "$(git --no-pager tag --points-at HEAD)" \
@@ -33,6 +34,7 @@ cat ../../frontend/package.json | jq -c \
         build_id: ($build_id | tonumber),
         build_url: ($repo + "/actions/runs/" + $build_id),
         $commit,
+        $email,
         $ref_type,
         $repo,
         tag: ($tag | if . == "" then null else . end),
