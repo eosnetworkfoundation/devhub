@@ -15,7 +15,7 @@ echo "Identified \"$DIST_DL_FOLDER\" as the matrix build artifact from the most 
 ee "pushd '$DIST_DL_FOLDER'"
 ee 'tar -xzf dist.tar.gz'
 ee 'pushd dist'
-ee cp ../../package.json .
+ee cp ../../frontend/package.json .
 ee 'ls -la'
 ee 'aws s3 sync "." "s3://$S3_BUCKET" --delete --dry-run'
 echo 'Done! - frontend-publish.sh'
