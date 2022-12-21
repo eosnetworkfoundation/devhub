@@ -44,10 +44,10 @@ jobs:
         id: aws_role
         run: |
           if [[ ${{ github.ref_type }} == 'tag' ]]; then
-            echo 'Found tag "${{ github.ref_name }}", attempting production deployment.'
+            echo 'Found tag "${{ github.ref_name }}," attempting production deployment.'
             echo '::set-output name=arn::${{ secrets.DEVHUB_FRONTEND_PROD_IAM_ARN }}'
           else
-            echo 'Found branch ${{ github.ref_name }}, using a dry-run.'
+            echo 'Found branch "${{ github.ref_name }}," using a dry-run.'
             echo '::set-output name=arn::${{ secrets.DEVHUB_FRONTEND_RO_IAM_ARN }}'
           fi
 
