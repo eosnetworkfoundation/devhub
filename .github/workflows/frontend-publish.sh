@@ -29,8 +29,8 @@ cat ../../frontend/package.json | jq -c \
     '.git += {
         $actor,
         branch: ($branch | if . == "" then null else . end),
-        $build,
-        $build_id,
+        build: ($build | tonumber),
+        build_id: ($build_id | tonumber),
         build_url: ($repo + "/actions/runs/" + $build_id),
         $commit,
         $ref_type,
