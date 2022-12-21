@@ -43,9 +43,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Determine AWS Role
-        id: aws_role
-        run: .github/workflows/frontend-aws-role.sh
+      - name: Determine AWS Context
+        id: aws_context
+        run: .github/workflows/frontend-aws-context.sh
         env:
           DEVHUB_FRONTEND_PROD_IAM_ARN: ${{ secrets.DEVHUB_FRONTEND_PROD_IAM_ARN }}
           DEVHUB_FRONTEND_RO_IAM_ARN: ${{ secrets.DEVHUB_FRONTEND_RO_IAM_ARN }}
@@ -54,7 +54,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1-node16
         with:
           aws-region: us-east-1
-          role-to-assume: ${{ steps.aws_role.outputs.arn }}
+          role-to-assume: ${{ steps.aws_context.outputs.role_arn }}
           role-duration-seconds: 900
 
       - name: Download Matrix Artifacts
