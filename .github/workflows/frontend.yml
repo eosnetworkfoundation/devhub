@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Static Frontend Build - node v${{ matrix.node-version }}
-        run: .github/workflows/frontend.sh
+        run: .github/workflows/frontend-build.sh
         env:
           DEVHUB_BACKEND_API: ${{ secrets.DEVHUB_BACKEND_API }}
 
