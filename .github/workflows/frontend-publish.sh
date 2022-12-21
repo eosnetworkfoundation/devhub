@@ -41,5 +41,9 @@ cat ../../frontend/package.json | jq -c \
 ee 'cat package.json | jq .git'
 ee 'ls -la'
 echo 'Uploading website distribution to Amazon S3.'
-ee 'aws s3 sync "." "s3://$S3_BUCKET" --delete --dryrun'
+export S3_SYNC='aws s3 sync "." "s3://$S3_BUCKET" --delete'
+if [[ "$DRY_RUN" != 'false' ]]; then
+    export S3_SYNC="$S3_SYNC --dryrun"
+fi
+ee "$S3_SYNC"
 echo 'Done! - frontend-publish.sh'
