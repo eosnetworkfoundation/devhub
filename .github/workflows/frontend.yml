@@ -62,3 +62,5 @@ jobs:
 
       - name: Publish Frontend
         run: .github/workflows/frontend-publish.sh
+        env:
+          S3_BUCKET: ${{ secrets.DEVHUB_FRONTEND_PROD_S3_BUCKET }}
