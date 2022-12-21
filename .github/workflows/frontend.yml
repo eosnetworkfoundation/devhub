@@ -44,7 +44,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Determine AWS Context
-        id: aws_context
+        id: aws-context
         run: .github/workflows/frontend-aws-context.sh
         env:
           DEVHUB_FRONTEND_PROD_IAM_ARN: ${{ secrets.DEVHUB_FRONTEND_PROD_IAM_ARN }}
@@ -54,7 +54,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1-node16
         with:
           aws-region: us-east-1
-          role-to-assume: ${{ steps.aws_context.outputs.role_arn }}
+          role-to-assume: ${{ steps.aws-context.outputs.role-arn }}
           role-duration-seconds: 900
 
       - name: Download Matrix Artifacts
