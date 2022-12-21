@@ -40,11 +40,22 @@ jobs:
       id-token: write
       contents: read
     steps:
+      - name: Determine AWS Role
+        id: aws_role
+        run: |
+          if [[ ${{ github.ref_type }} == 'tag' ]]; then
+            echo 'Found tag "${{ github.ref_name }}", attempting production deployment.'
+            echo '::set-output name=arn::${{ secrets.DEVHUB_FRONTEND_PROD_IAM_ARN }}'
+          else
+            echo 'Found branch ${{ github.ref_name }}, using a dry-run.'
+            echo '::set-output name=arn::${{ secrets.DEVHUB_FRONTEND_RO_IAM_ARN }}'
+          fi
+
       - name: Authenticate to AWS
         uses: aws-actions/configure-aws-credentials@v1-node16
         with:
           aws-region: us-east-1
-          role-to-assume: ${{ secrets.DEVHUB_FRONTEND_RO_IAM_ARN }}
+          role-to-assume: ${{ steps.aws_role.outputs.arn }}
           role-duration-seconds: 900
 
       - name: Download Matrix Artifacts
