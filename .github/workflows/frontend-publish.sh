@@ -37,7 +37,7 @@ cat ../../frontend/package.json | jq -c \
         $repo,
         tag: ($tag | if . == "" then null else . end),
         $triggering_actor
-    }'
+    }' > package.json
 ee 'cat package.json | jq .git'
 ee 'ls -la'
 echo 'Uploading website distribution to Amazon S3.'
