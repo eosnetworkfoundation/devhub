@@ -52,7 +52,7 @@ echo 'Tagging website objects.'
 export TAGS="$(jq -n -c --argjson git "$(cat package.json | jq -c .git)" '{"billing-use": "devrel", "branch": ($git | .branch), "build-url": ($git | .build_url), "commit": ($git | .commit), "email": ($git | .email), "manual": false, "tag": ($git | .tag), "terraform": false}')"
 ee 'echo "$TAGS" | jq .'
 export S3_LIST='aws s3api list-objects-v2 --bucket "$S3_BUCKET" --query "Contents[].{Key:Key}" --output text'
-export S3_TAG='xargs -n 1 -I OBJECT -- aws s3api put-object-tagging --bucket "$S3_BUCKET" --key OBJECT --tagging "TagSet=[{Key=colour,Value=blue}]"'
+export S3_TAG='xargs -I OBJECT -- aws s3api put-object-tagging --bucket "$S3_BUCKET" --key OBJECT --tagging "TagSet=[{Key=colour,Value=blue}]"'
 if [[ "$DRY_RUN" != 'false' ]]; then
     ee "$S3_LIST | $S3_TAG \"TagSet=$(echo "$TAGS" | jq -c 'to_entries')\" --dryrun"
 else
