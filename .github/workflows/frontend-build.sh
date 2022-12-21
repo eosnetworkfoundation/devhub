@@ -24,5 +24,5 @@ ee yarn --frozen-lockfile
 # generate static site
 ee yarn generate --fail-on-error
 # pack dist folder
-ee 'tar -cf dist.tar.gz dist/*'
+ee 'tar -czf dist.tar.gz dist/*'
 echo 'Done! - frontend-build.sh'
