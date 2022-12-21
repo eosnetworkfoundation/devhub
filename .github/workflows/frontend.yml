@@ -47,5 +47,8 @@ jobs:
           role-to-assume: ${{ secrets.DEVHUB_FRONTEND_RO_IAM_ARN }}
           role-duration-seconds: 900
 
-      - name: Authentication Test
-        run: aws s3 ls
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+
+      - name: Debug Step
+        run: ls -la
