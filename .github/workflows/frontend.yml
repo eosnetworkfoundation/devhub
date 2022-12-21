@@ -60,5 +60,5 @@ jobs:
       - name: Download Matrix Artifacts
         uses: actions/download-artifact@v3
 
-      - name: Debug Step
-        run: ls -la && tree && env | sort
+      - name: Publish Frontend
+        run: .github/workflows/frontend-publish.sh
