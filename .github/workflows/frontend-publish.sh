@@ -16,7 +16,7 @@ ee "pushd '$DIST_DL_FOLDER'"
 ee 'tar -xzf dist.tar.gz'
 ee 'pushd dist'
 echo 'Packing website metadata into distribution.'
-cat ../../frontend/package.json . | jq -c \
+cat ../../frontend/package.json | jq -c \
     --arg actor "$GITHUB_ACTOR" \
     --arg branch "$(git branch --show-current)" \
     --arg build "$GITHUB_RUN_NUMBER" \
