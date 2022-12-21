@@ -59,4 +59,12 @@ if [[ "$DRY_RUN" != 'false' ]]; then
 else
     ee "$S3_LIST | $S3_TAG \"TagSet=$(echo "$TAGS" | jq -c 'to_entries')\""
 fi
+echo 'Refreshing AWS Cloudfront (CDN) Edge Nodes'
+export AWS_CDN_REFRESH='aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION" --paths "/*"'
+if [[ "$DRY_RUN" != 'false' ]]; then
+    echo 'AWS CLI dry run support is inconsistent and this command does not have it, printing CDN refresh command with no dry run.'
+    echo "$ $AWS_CDN_REFRESH"
+else
+    ee "$AWS_CDN_REFRESH"
+fi
 echo 'Done! - frontend-publish.sh'
