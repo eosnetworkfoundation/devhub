@@ -17,5 +17,5 @@ ee 'tar -xzf dist.tar.gz'
 ee 'pushd dist'
 ee cp ../../frontend/package.json .
 ee 'ls -la'
-ee 'aws s3 sync "." "s3://$S3_BUCKET" --delete --dry-run'
+ee 'aws s3 sync "." "s3://$S3_BUCKET" --delete --dryrun'
 echo 'Done! - frontend-publish.sh'
