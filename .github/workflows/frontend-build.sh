@@ -17,6 +17,7 @@ if [[ ! -z "$DEVHUB_BACKEND_API" ]]; then
     echo
 else
     printf '\e[93mWARNING: DEVHUB_BACKEND_API is not defined!\e[0m\n'
+    echo '::warning title=DevHub Backend API Endpoint Missing::DEVHUB_BACKEND_API is not defined!'
 fi
 # init
 ee pushd frontend
