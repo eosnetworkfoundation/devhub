@@ -44,7 +44,7 @@ if [[ "$DRY_RUN" != 'false' ]]; then
     echo "$ $AWS_CDN_REFRESH"
 else
     echo "$ $AWS_CDN_REFRESH"
-    export INVALIDATION_ID="$(eval "$AWS_CDN_REFRESH" | tee >(cat - >&9) | jq '.Invalidation.Id')"
+    export INVALIDATION_ID="$(eval "$AWS_CDN_REFRESH" | tee >(cat - >&9) | jq -r '.Invalidation.Id')"
     echo 'Waiting for CDN edge nodes to refresh...'
     ee "aws cloudfront wait invalidation-completed --distribution-id \"\$CF_DISTRIBUTION\" --id '$INVALIDATION_ID'"
 fi
