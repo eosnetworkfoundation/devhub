@@ -38,13 +38,13 @@ else
     ee "$S3_LIST | $S3_TAG '$AWS_TAG_FORMAT'"
 fi
 echo 'Refreshing AWS Cloudfront (CDN) Edge Nodes'
-export AWS_CDN_REFRESH="aws cloudfront create-invalidation --distribution-id \"$$CF_DISTRIBUTION\" --paths '/*'"
+export AWS_CDN_REFRESH="aws cloudfront create-invalidation --distribution-id \"\$CF_DISTRIBUTION\" --paths '/*'"
 if [[ "$DRY_RUN" != 'false' ]]; then
     echo 'AWS CLI dry run support is inconsistent and this command does not have it, printing CDN refresh command with no dry run.'
     echo "$ $AWS_CDN_REFRESH"
 else
     export INVALIDATION_ID="$(ee "$AWS_CDN_REFRESH" | tee >(cat - >&9) | jq '.Invalidation.Id')"
     echo 'Waiting for CDN edge nodes to refresh...'
-    ee "aws cloudfront wait invalidation-completed --distribution-id \"$$CF_DISTRIBUTION\" --id '$INVALIDATION_ID'"
+    ee "aws cloudfront wait invalidation-completed --distribution-id \"\$CF_DISTRIBUTION\" --id '$INVALIDATION_ID'"
 fi
 echo 'Done! - frontend-publish.sh'
