@@ -14,7 +14,9 @@ ee yarn --version
 ee npm --version
 if [[ ! -z "$DEVHUB_BACKEND_API" ]]; then
     ee 'printf "$DEVHUB_BACKEND_API" | wc -c'
-    export BACKEND_UP="$(ee 'curl -fsSL "$DEVHUB_BACKEND_API/test"' | tee >(cat - >&9))"
+    export BACKEND_API_TEST='curl -fsSL "$DEVHUB_BACKEND_API/test"'
+    echo "$BACKEND_API_TEST"
+    export BACKEND_UP="$(eval "$BACKEND_API_TEST" | tee >(cat - >&9))"
     echo
     if [[ "$BACKEND_UP" == 'true' ]]; then
         echo 'DevHub backend API up!'
