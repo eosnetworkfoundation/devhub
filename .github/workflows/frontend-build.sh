@@ -36,6 +36,7 @@ echo 'Packing website metadata into distribution.'
 cat package.json | jq -c \
     --arg actor "$GITHUB_ACTOR" \
     --arg branch "$(git branch --show-current)" \
+    --arg branchFromTag "$(git branch --contains 'tags/v0.1.0' | tail -n +2 | tail -n 1 | tr -d '[:space:]')" \
     --arg build "$GITHUB_RUN_NUMBER" \
     --arg build_id "$GITHUB_RUN_ID" \
     --arg commit "$(git rev-parse HEAD)" \
@@ -47,7 +48,7 @@ cat package.json | jq -c \
     --arg triggering_actor "$GITHUB_TRIGGERING_ACTOR" \
     '.git += {
         $actor,
-        branch: ($branch | if . == "" then null else . end),
+        branch: (if $branch != "" then $branch elif $branchFromTag != "" then $branchFromTag else null end),
         build: ($build | tonumber),
         build_id: ($build_id | tonumber),
         build_url: ($repo + "/actions/runs/" + $build_id),
