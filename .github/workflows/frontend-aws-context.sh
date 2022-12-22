@@ -5,7 +5,7 @@ if [[ "$GITHUB_REF_TYPE" == 'tag' ]]; then
     export GIT_TAG="$(git --no-pager tag --points-at HEAD)"
     export FRONTEND_VERSION="v$(cat frontend/package.json | jq -r '.version')"
     if [[ "$FRONTEND_VERSION" != "$GIT_TAG" || "$GIT_TAG" != "$GITHUB_REF_NAME" ]]; then
-        echo '::error:: Frontend package.json version string does not match the git tag!'
+        echo '::error title=Version String Mismatch:: Frontend package.json version string does not match the git tag!'
         echo "FRONTEND_VERSION='$FRONTEND_VERSION'"
         echo "GITHUB_REF_NAME='$GITHUB_REF_NAME'"
         echo "GIT_TAG='$GIT_TAG'"
