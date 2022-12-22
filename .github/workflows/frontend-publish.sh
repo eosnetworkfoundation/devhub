@@ -9,6 +9,7 @@ function ee()
 
 exec 9>&1 # enable tee to write to STDOUT as a file
 ee 'aws --version'
+ee 'git log -1'
 echo 'Finding newest matrix artifact.'
 ee 'ls -la'
 export DIST_DL_FOLDER="$(find . -maxdepth '1' -name 'dist*' -type 'd' | sort -r | head -n '1')"
