@@ -30,7 +30,6 @@ export TAGS="$(jq -n -c --argjson git "$(cat package.json | jq -c .git)" '{"bill
 ee 'echo "$TAGS" | jq .'
 export AWS_TAG_FORMAT="$(echo "$TAGS" | jq -c '{TagSet: (. | to_entries)}' | sed 's/"key"/"Key"/g' | sed 's/"value"/"Value"/g')"
 export S3_LIST='aws s3api list-objects-v2 --bucket "$S3_BUCKET" --query "Contents[].{Key:Key}" --output text'
-export S3_TAG='xargs -I OBJECT -- aws s3api put-object-tagging --bucket "$S3_BUCKET" --key OBJECT --tagging'
 export S3_TAG_OBJECT='aws s3api put-object-tagging --bucket "$S3_BUCKET"'
 if [[ "$DRY_RUN" != 'false' ]]; then
     echo 'AWS CLI dry run support is inconsistent and this command does not have it, printing object tag command with no dry run.'
@@ -38,9 +37,11 @@ if [[ "$DRY_RUN" != 'false' ]]; then
     do
         echo "$ $S3_TAG_OBJECT --key '$OBJECT' --tagging '$AWS_TAG_FORMAT'"
     done
-    echo "$ $S3_LIST | $S3_TAG '$AWS_TAG_FORMAT'"
 else
-    ee "$S3_LIST | $S3_TAG '$AWS_TAG_FORMAT'"
+    for OBJECT in $(eval "$S3_LIST")
+    do
+        ee "$S3_TAG_OBJECT --key '$OBJECT' --tagging '$AWS_TAG_FORMAT'"
+    done
 fi
 echo 'Refreshing AWS Cloudfront (CDN) Edge Nodes'
 export AWS_CDN_REFRESH="aws cloudfront create-invalidation --distribution-id \"\$CF_DISTRIBUTION\" --paths '/*'"
