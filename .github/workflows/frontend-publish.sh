@@ -31,8 +31,13 @@ ee 'echo "$TAGS" | jq .'
 export AWS_TAG_FORMAT="$(echo "$TAGS" | jq -c '{TagSet: (. | to_entries)}' | sed 's/"key"/"Key"/g' | sed 's/"value"/"Value"/g')"
 export S3_LIST='aws s3api list-objects-v2 --bucket "$S3_BUCKET" --query "Contents[].{Key:Key}" --output text'
 export S3_TAG='xargs -I OBJECT -- aws s3api put-object-tagging --bucket "$S3_BUCKET" --key OBJECT --tagging'
+export S3_TAG_OBJECT='aws s3api put-object-tagging --bucket "\$S3_BUCKET" --key "$OBJECT" --tagging'
 if [[ "$DRY_RUN" != 'false' ]]; then
     echo 'AWS CLI dry run support is inconsistent and this command does not have it, printing object tag command with no dry run.'
+    for OBJECT in $(eval "$S3_LIST")
+    do
+        ee "$(echo "$S3_TAG_OBJECT")"
+    done
     echo "$ $S3_LIST | $S3_TAG '$AWS_TAG_FORMAT'"
 else
     ee "$S3_LIST | $S3_TAG '$AWS_TAG_FORMAT'"
