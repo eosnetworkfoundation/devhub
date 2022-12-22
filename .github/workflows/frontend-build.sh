@@ -40,6 +40,7 @@ cat package.json | jq -c \
     --arg build_id "$GITHUB_RUN_ID" \
     --arg commit "$(git rev-parse HEAD)" \
     --arg email "$(git log -n 1 --pretty=format:%ae)" \
+    --arg node "$(node --version)" \
     --arg ref_type "$GITHUB_REF_TYPE" \
     --arg repo "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" \
     --arg tag "$(git --no-pager tag --points-at HEAD)" \
@@ -52,12 +53,13 @@ cat package.json | jq -c \
         build_url: ($repo + "/actions/runs/" + $build_id),
         $commit,
         $email,
+        $node,
         $ref_type,
         $repo,
         tag: ($tag | if . == "" then null else . end),
         $triggering_actor
     }' > dist/package.json
-ee 'cat package.json | jq .git'
+ee 'cat dist/package.json | jq .git'
 # pack dist folder
 ee 'tar -czf dist.tar.gz dist/*'
 echo 'Done! - frontend-build.sh'
