@@ -19,7 +19,7 @@ if [[ ! -z "$DEVHUB_BACKEND_API" ]]; then
     export BACKEND_UP="$(eval "$BACKEND_API_TEST" | tee >(cat - >&9))"
     echo
     if [[ "$BACKEND_UP" == 'true' ]]; then
-        echo 'DevHub backend API up!'
+        echo 'DevHub backend API is up!'
     else
         printf '\e[93mWARNING: Failed to connect to DevHub backend API!\e[0m\n'
         echo '::warning title=Failed to Connect to DevHub Backend API::Failed to connect to DevHub backend API!'
