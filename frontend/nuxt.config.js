@@ -45,7 +45,11 @@ export default {
     '@nuxtjs/auth-next',
     '@nuxtjs/markdownit',
     'vue-social-sharing/nuxt',
+    '@nuxtjs/gtm',
   ],
+  gtm: {
+    id: 'GTM-5BZGD5N'
+  },
   auth: {
     redirect: {
       login: '/', // redirect user when not connected

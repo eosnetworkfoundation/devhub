@@ -21,7 +21,8 @@
         <!-- Similar to this: https://dribbble.com/shots/17569361-Web-UI/attachments/12715900?mode=media -->
         <ShareNetwork network="twitter"
                       :url="shareUrl"
-                      :title="`This ${course.title} course wasn't easy, but I still got ${percentage} of the questions right!`"
+                      :title="`This '${course.title}' course wasn't easy, but I still got ${percentage} of the questions right!`"
+
         >
           <Button :secondary="true" @click.native="sharing = !sharing">Share</Button>
         </ShareNetwork>
