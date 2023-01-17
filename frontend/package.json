@@ -27,6 +27,7 @@
     "@auth0/auth0-vue": "^1.0.2",
     "@nuxtjs/auth-next": "5.0.0-1648802546.c9880dc",
     "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/gtm": "^2.4.0",
     "@nuxtjs/markdownit": "^2.0.0",
     "core-js": "^3.19.3",
     "isomorphic-fetch": "^3.0.0",
