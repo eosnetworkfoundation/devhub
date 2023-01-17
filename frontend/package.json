@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "EOS Network Foundation DevHub portal website frontend",
   "repository": "https://github.com/eosnetworkfoundation/devhub",
   "homepage": "https://learn.eosnetwork.com",
