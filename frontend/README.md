@@ -1,6 +1,16 @@
 # Frontend
 EOS Network Foundation DevHub portal website frontend for [learn.eosnetwork.com](https://learn.eosnetwork.com).
 
+## Publishing
+
+In order to publish the frontend through CI you need to:
+- Push up your changes and make sure the CI dry run passes
+- Bump the version in `package.json`
+- Create a tag with `v*.*.*` that matches the version in `package.json`
+
+Note: If you've installed new dependencies you need to commit the `yarn.lock` file, and it 
+must be built with the same version of yarn as the CI server (v16.*).
+
 ## Development
 Once you have the [prerequisites](../README.md#prerequisites) installed, start here.
 

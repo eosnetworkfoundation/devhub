@@ -184,6 +184,8 @@
       bottom:0;
       background:#000000;
 
+      z-index: var(--mobile-menu-index);
+
       .hamburger {
         stroke:#ffffff;
         display:flex;
