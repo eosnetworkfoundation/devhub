@@ -11,6 +11,7 @@
         <NuxtLink class="link" to="/earn">Earn</NuxtLink>
 <!--        <NuxtLink class="link" to="/discover?type=tools">Discover</NuxtLink>-->
 <!--        <NuxtLink class="link" to="/docs">Docs</NuxtLink>-->
+        <a href="https://docs.eosnetwork.com" target="_blank" rel="noopener noreferrer" class="link">Docs</a>
       </section>
       <section class="account" v-if="loading"></section>
       <section class="account" v-else>
@@ -34,6 +35,24 @@
           </section>
         </section>
       </section>
+      <section class="hamburger">
+        <figure @click="hamburgerOpen = !hamburgerOpen">
+          <Hamburger />
+        </figure>
+      </section>
+      <section class="floating-menu" :class="{'open':hamburgerOpen}">
+        <section class="hamburger">
+          <figure @click="hamburgerOpen = !hamburgerOpen">
+            <Hamburger />
+          </figure>
+        </section>
+        <section class="nav-links">
+          <NuxtLink @click.native="hamburgerOpen = false" class="link" to="/">Learn</NuxtLink>
+          <NuxtLink @click.native="hamburgerOpen = false" class="link" to="/earn">Earn</NuxtLink>
+          <!--        <NuxtLink @click.native="hamburgerOpen = false" class="link" to="/discover?type=tools">Discover</NuxtLink>-->
+          <a href="https://docs.eosnetwork.com"  target="_blank" rel="noopener noreferrer" @click.native="hamburgerOpen = false" class="link">Docs</a>
+        </section>
+      </section>
     </nav>
     <figure class="nav-spacer"></figure>
   </section>
@@ -45,6 +64,7 @@
       loading:true,
       loggedIn:false,
       menuOpen:false,
+      hamburgerOpen:false,
     }},
     computed:{
       user(){ return this.$store.state.user },
@@ -101,6 +121,16 @@
       padding:20px 20px;
     }
 
+    .hamburger {
+      display:none;
+      @media only screen and (max-width : $breakpoint) {
+        display: inline-block;
+        padding-left:20px;
+        stroke:#000000;
+        padding-top:6px;
+      }
+    }
+
     .logo {
       width:40px;
       height:40px;
@@ -129,14 +159,51 @@
         transition: color 0.2s ease;
 
         @media only screen and (max-width : $breakpoint) {
-          font-size:1rem;
-          margin:0 5px;
-          padding:10px;
+          //font-size:1rem;
+          //margin:0 5px;
+          //padding:10px;
+
+          display: none;
         }
 
 
         &.nuxt-link-exact-active, &:hover {
           color:var(--color-primary);
+        }
+      }
+    }
+
+
+    .floating-menu {
+      display:none;
+
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      background:#000000;
+
+      .hamburger {
+        stroke:#ffffff;
+        display:flex;
+        align-items:center;
+        padding:33px 20px;
+        justify-content: flex-end;
+      }
+
+      &.open {
+        display: block;
+      }
+
+      .nav-links {
+        display: block;
+
+        .link {
+          color:#ffffff;
+          display: block;
+          font-size: 2rem;
+          padding:20px 20px;
         }
       }
     }

@@ -76,11 +76,9 @@ export default {
   },
   async fetch() {
     this.profile = await this.$api.getProfile(this.$route.params.id);
-    console.log('this.profile', this.profile);
     if(!this.profile) return this.$router.push('/');
 
     this.progresses = await this.$api.getAllUserCourseProgresses(this.$route.params.id);
-    console.log('this.progresses', this.progresses);
   },
 
 }
