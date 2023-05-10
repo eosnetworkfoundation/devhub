@@ -71,13 +71,13 @@ export default {
         route:'https://github.com/eosnetworkfoundation/grant-framework/',
         image:`grant_splash.jpg`,
       },
-      {
-        title:'Help grow the community',
-        description:"Earn money by helping to expand the EOS community!",
-        buttonText:"Find out more",
-        route:'https://eosnetwork.com/blog/the-road-to-10k-growing-the-eos-discord-community/',
-        image:`https://eosnetwork.com/wp-content/uploads/2022/08/Road_To_10k-1024x576.png`,
-      },
+      // {
+      //   title:'Help grow the community',
+      //   description:"Earn money by helping to expand the EOS community!",
+      //   buttonText:"Find out more",
+      //   route:'https://eosnetwork.com/blog/the-road-to-10k-growing-the-eos-discord-community/',
+      //   image:`https://eosnetwork.com/wp-content/uploads/2022/08/Road_To_10k-1024x576.png`,
+      // },
       // {
       //   title:'Compete for prizes',
       //   description:"Take part in online hackathons where you can with $125k in prizes",
