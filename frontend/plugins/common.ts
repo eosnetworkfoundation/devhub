@@ -24,6 +24,21 @@ export default (context, inject) => {
           location.href = redirectUrl;
         }
       }
+    },
+    head(){
+      const description = `Watch video courses on blockchain development for the EOS Network`;
+      const title = `Learn EOS Blockchain Development`;
+      return {
+        title: `EOS Learn`,
+        meta: [
+          { hid: 'description', name: 'description', content: description },
+          { hid: 'og:title', property: 'og:title', content: title },
+          { hid: 'og:description', property: 'og:description', content: description },
+          { hid: 'twitter:title', name: 'twitter:title', content: title },
+          { hid: 'twitter:description', name: 'twitter:description', content: description },
+          { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }
+        ],
+      };
     }
   });
 }

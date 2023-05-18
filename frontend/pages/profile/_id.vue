@@ -60,6 +60,9 @@ export default {
     profile: null,
     progresses:[]
   }},
+  head() {
+    return this.$common.head;
+  },
   methods:{
     goToCourse(course){
       this.$router.push(`/course/${course.slug}`)

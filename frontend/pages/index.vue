@@ -18,6 +18,9 @@ export default {
     courses: {},
     continueWatching:[],
   }},
+  head() {
+    return this.$common.head;
+  },
   computed:{
     leftOverCourses(){
       if(!this.courses || !this.courses.courses || !this.courses.courses.length){

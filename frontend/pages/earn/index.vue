@@ -27,6 +27,9 @@
 <script>
 export default {
   name: 'Earn',
+  head() {
+    return this.$common.head;
+  },
   data(){return {
     panels:[
       // {

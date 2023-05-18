@@ -58,7 +58,7 @@ export default {
   },
   head() {
     return {
-      title: this.selectedCourse.title,
+      title: `EOS Learn - ${this.episode.title}`,
       meta: [
         { hid: 'description', name: 'description', content: this.episode.description },
         { hid: 'og:title', property: 'og:title', content: this.episode.title },
