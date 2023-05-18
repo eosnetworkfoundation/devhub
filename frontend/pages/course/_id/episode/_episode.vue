@@ -56,6 +56,21 @@ export default {
       return this.$store.state.user;
     },
   },
+  head() {
+    return {
+      title: this.selectedCourse.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.episode.description },
+        { hid: 'og:title', property: 'og:title', content: this.episode.title },
+        { hid: 'og:description', property: 'og:description', content: this.episode.description },
+        { hid: 'og:image', property: 'og:image', content: this.$common.episodeThumbnail(this.episode) },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.episode.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.episode.description },
+        { hid: 'twitter:image', name: 'twitter:image', content: this.$common.episodeThumbnail(this.episode) },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }
+      ],
+    };
+  },
   data(){return {
     localCourseProgress: null,
     error:null,

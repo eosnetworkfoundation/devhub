@@ -78,6 +78,21 @@ export default {
       await this.$store.dispatch('setCourseProgress', progress);
     }
   },
+  head() {
+    return {
+      title: this.selectedCourse.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.selectedCourse.description },
+        { hid: 'og:title', property: 'og:title', content: this.selectedCourse.title },
+        { hid: 'og:description', property: 'og:description', content: this.selectedCourse.description },
+        { hid: 'og:image', property: 'og:image', content: this.$common.thumbnail(this.selectedCourse) },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.selectedCourse.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.selectedCourse.description },
+        { hid: 'twitter:image', name: 'twitter:image', content: this.$common.thumbnail(this.selectedCourse) },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' }
+      ],
+    };
+  },
   methods: {
     async setSelectedEpisode(episode) {
       let index = this.selectedCourse.episodes.findIndex(x => x.id === episode.id);
