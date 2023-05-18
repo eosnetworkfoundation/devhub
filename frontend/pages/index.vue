@@ -42,6 +42,9 @@ export default {
     // console.log('this.courses', this.courses);
     // this.continueWatching = await this.$api.getContinueWatching();
   },
+  mounted() {
+    console.log('courses', this.courses);
+  },
   methods:{
     watchFirstVideo(){
       // TODO: Fix continue watching
