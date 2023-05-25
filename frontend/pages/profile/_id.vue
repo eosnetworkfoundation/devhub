@@ -61,7 +61,7 @@ export default {
     progresses:[]
   }},
   head() {
-    return this.$common.head;
+    return this.$common.head();
   },
   methods:{
     goToCourse(course){

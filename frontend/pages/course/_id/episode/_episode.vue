@@ -99,8 +99,6 @@ export default {
       this.busy = true;
       this.error = null;
 
-
-      console.log(JSON.stringify(this.localCourseProgress, null, 4))
       if(Object.keys(this.localCourseProgress.answers).length !== this.episode.questions.length){
         this.error = "You have not answered all the questions!";
         this.busy = false;

@@ -19,7 +19,8 @@ export default {
     continueWatching:[],
   }},
   head() {
-    return this.$common.head;
+    console.log('head', this.$common.head());
+    return this.$common.head();
   },
   computed:{
     leftOverCourses(){
@@ -40,10 +41,6 @@ export default {
       acc.push(course);
       return acc;
     }, []).sort((a, b) => a.difficulty - b.difficulty);
-    console.log('allCourses', allCourses);
-    // this.courses = await this.$api.getCourses();
-    // console.log('this.courses', this.courses);
-    // this.continueWatching = await this.$api.getContinueWatching();
   },
   methods:{
     watchFirstVideo(){
