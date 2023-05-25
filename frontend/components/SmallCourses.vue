@@ -50,7 +50,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
-      align-items: center;
+      align-items: flex-start;
       margin-top:30px;
       column-gap: 30px;
       row-gap: 50px;
