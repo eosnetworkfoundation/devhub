@@ -79,6 +79,8 @@ export default {
     }
   },
   head() {
+    if(!this.selectedCourse) return;
+
     return {
       title: `EOS Learn - ${this.selectedCourse.title}`,
       meta: [
