@@ -57,6 +57,8 @@ export default {
     },
   },
   head() {
+    if(!this.episode) return;
+
     return {
       title: `EOS Learn - ${this.episode.title}`,
       meta: [

@@ -19,7 +19,6 @@ export default {
     continueWatching:[],
   }},
   head() {
-    console.log('head', this.$common.head());
     return this.$common.head();
   },
   computed:{
