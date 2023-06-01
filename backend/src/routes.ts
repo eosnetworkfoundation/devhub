@@ -211,6 +211,11 @@ routes.get('/progress/bad-answers/:course_slug_hash', checkJwt, async (req, res)
     res.json(result);
 });
 
+routes.get('/finished-progress-count', async (req, res) => {
+    const result = await CourseProgressService.getAllProgressCount();
+    res.json(result);
+});
+
 routes.all('*', (req, res) => {
     console.log('hit bad route', req.method, req.url, req.body);
     res.sendStatus(403)

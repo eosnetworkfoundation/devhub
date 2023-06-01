@@ -99,4 +99,10 @@ export default class CourseProgressService {
         return bad_answers;
     }
 
+    static async getAllProgressCount(): Promise<number> {
+        const progresses = await ORM.query(`SELECT COUNT(*) FROM BUCKET_NAME WHERE doc_type = 'course_progress'`);
+        if(!progresses) return 0;
+        return progresses[0]['$1'];
+    }
+
 }

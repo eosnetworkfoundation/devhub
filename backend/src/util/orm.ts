@@ -77,14 +77,15 @@ export default class ORM {
 
 			return CLUSTER.query(queryString, {
 				scanConsistency: 'request_plus',
-			}).catch(err => {
-				console.error(err);
-				return null;
 			}).then(queryResult => {
+				console.log(queryResult);
 				let rows = queryResult.rows;
 				if(!rows) return [];
 				rows = rows.map(x => x.hasOwnProperty(BUCKET_NAME) ? x[BUCKET_NAME] : x);
 				return rows.map(x => model ? new model(x) : x)
+			}).catch(err => {
+				console.error(err);
+				return null;
 			});
 		} catch(err) {
 			console.error(err);
