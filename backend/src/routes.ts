@@ -211,8 +211,8 @@ routes.get('/progress/bad-answers/:course_slug_hash', checkJwt, async (req, res)
     res.json(result);
 });
 
-routes.get('/finished-progress-count', async (req, res) => {
-    const result = await CourseProgressService.getAllProgressCount();
+routes.get('/finished-courses-count', async (req, res) => {
+    const result = await CourseProgressService.getAllFinishedProgresses();
     res.json(result);
 });
 
