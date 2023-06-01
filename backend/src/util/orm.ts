@@ -78,7 +78,6 @@ export default class ORM {
 			return CLUSTER.query(queryString, {
 				scanConsistency: 'request_plus',
 			}).then(queryResult => {
-				console.log(queryResult);
 				let rows = queryResult.rows;
 				if(!rows) return [];
 				rows = rows.map(x => x.hasOwnProperty(BUCKET_NAME) ? x[BUCKET_NAME] : x);
