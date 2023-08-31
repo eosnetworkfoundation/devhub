@@ -25,7 +25,6 @@
     "compression": "^1.7.4",
     "concurrently": "^7.2.2",
     "cors": "^2.8.5",
-    "couchbase": "^3.2.5",
     "dotenv": "^16.0.1",
     "eosjs-ecc": "^4.0.7",
     "express": "^4.18.1",
