@@ -39,7 +39,10 @@ export default {
       if(acc.find(c => c.slug === course.slug)) return acc;
       acc.push(course);
       return acc;
-    }, []).sort((a, b) => a.difficulty - b.difficulty);
+    }, [])
+        // .sort((a, b) => a.difficulty - b.difficulty);
+      // sort by date
+        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   },
   methods:{
     watchFirstVideo(){

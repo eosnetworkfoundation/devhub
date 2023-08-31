@@ -3,31 +3,34 @@ class ApiService {
 
     constructor(context:any) {
         this.NUXT_CONTEXT = context;
-
     }
 
-    GET(url:string) {
+    async GET(url:string) {
+        if(this.NUXT_CONTEXT.$firebase) await this.NUXT_CONTEXT.$firebase.getNewToken();
         this.NUXT_CONTEXT.$axios.setHeader('Content-Type', 'application/json');
-        this.NUXT_CONTEXT.$axios.setHeader('Authorization', this.NUXT_CONTEXT.$auth.strategy.token.get());
+        if(this.NUXT_CONTEXT.$firebase && this.NUXT_CONTEXT.$firebase.isLoggedIn) {
+            this.NUXT_CONTEXT.$axios.setHeader('Authorization', `Bearer: ${this.NUXT_CONTEXT.$firebase.lastToken}`);
+        }
         return this.NUXT_CONTEXT.$axios.get(`${this.NUXT_CONTEXT.$config.BACKEND_API}/${url}`).then(x => x.data);
     }
 
-    POST(url:string, data:any) {
+    async POST(url:string, data:any) {
+        if(this.NUXT_CONTEXT.$firebase) await this.NUXT_CONTEXT.$firebase.getNewToken();
         this.NUXT_CONTEXT.$axios.setHeader('Content-Type', 'application/json');
-        this.NUXT_CONTEXT.$axios.setHeader('Authorization', this.NUXT_CONTEXT.$auth.strategy.token.get());
+        if(this.NUXT_CONTEXT.$firebase && this.NUXT_CONTEXT.$firebase.isLoggedIn) {
+            this.NUXT_CONTEXT.$axios.setHeader('Authorization', `Bearer: ${this.NUXT_CONTEXT.$firebase.lastToken}`);
+        }
         return this.NUXT_CONTEXT.$axios.post(`${this.NUXT_CONTEXT.$config.BACKEND_API}/${url}`, data).then(x => x.data);
     }
 
     async isLoggedIn() {
-      if(!this.NUXT_CONTEXT.$auth.strategy.token.get()) return;
-        return await this.GET('auth/status').then(() => true).catch(err => {
-          console.error('Auth status error', err);
-          return false;
-        });
+
+        return this.NUXT_CONTEXT.$firebase && this.NUXT_CONTEXT.$firebase.isLoggedIn;
     }
 
     async getUser(){
-      if(!this.NUXT_CONTEXT.$auth.strategy.token.get()) return;
+      if(!this.NUXT_CONTEXT.$firebase.isLoggedIn) return;
+
         return await this.GET('user').then(user => {
           if(user.hasOwnProperty('error')) throw new Error(user.error_msg);
 
@@ -131,6 +134,13 @@ class ApiService {
       return await this.GET(`progresses/${user_id}`).then(progresses => {
           if(progresses.hasOwnProperty('error')) throw new Error(progresses.error_msg);
           return progresses;
+        });
+    }
+
+    async getChallenges(){
+      return await this.GET(`challenges`).then(challenges => {
+          if(challenges.hasOwnProperty('error')) throw new Error(challenges.error_msg);
+          return challenges;
         });
     }
 }

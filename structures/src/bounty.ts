@@ -26,8 +26,4 @@ export class Bounty {
 
     static key(slug_hash:string){ return `bounty::${slug_hash}`; }
     key(){ return Bounty.key(this.slug_hash); }
-
-    static titleToSlug(title:string){
-        return title.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-    }
 }

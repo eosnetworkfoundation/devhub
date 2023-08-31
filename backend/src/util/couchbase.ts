@@ -25,7 +25,7 @@ export default async (bucketName:string) => {
         const bucket = cluster.bucket(bucketName).defaultCollection();
         return { bucket, cluster };
     } catch (err) {
-        console.error("Couchbase error", err);
+        console.error("Couchbase error", JSON.stringify(err));
         return null;
     }
 };

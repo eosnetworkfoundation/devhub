@@ -1,0 +1,9 @@
+{
+  "doc_type": "challenge",
+  "created_at": 1234567890,
+  "id": "test-challenge",
+  "rewards": 50,
+  "title": "Test Challenge",
+  "description": "This is a test challenge",
+  "type": "engagement"
+}

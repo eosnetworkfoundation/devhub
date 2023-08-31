@@ -6,12 +6,12 @@
         <img :src="profile.graphics.avatar" referrerpolicy="no-referrer" />
       </figure>
       <figure class="name">{{ profile.name }}</figure>
-<!--      <section class="info">-->
+      <section class="info">
 <!--        <figure>Rank: <b>Expert</b></figure>-->
-<!--        <figure v-for="account in profile.linked_accounts">-->
-<!--          {{account.network}}: <b>{{account.account}}</b>-->
-<!--        </figure>-->
-<!--      </section>-->
+        <figure v-for="account in profile.linked_accounts">
+          {{account.network}}: <b>{{account.account}}</b>
+        </figure>
+      </section>
       <hr />
 <!--      <section class="trophies">-->
 <!--        <figure class="course-category">Trophies</figure>-->

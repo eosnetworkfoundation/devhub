@@ -55,7 +55,7 @@ export class Course {
     static key(slug_hash:string){ return `course::${slug_hash}`; }
     key(){ return Course.key(this.slug_hash); }
 
-    asPublic(){
+    asPublic() {
         const clone = JSON.parse(JSON.stringify(this));
         delete clone.answers;
         return new Course(clone);

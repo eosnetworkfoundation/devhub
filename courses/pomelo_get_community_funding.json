@@ -1,0 +1,152 @@
+{
+  "doc_type": "course",
+  "created_at": 1670452820900,
+  "slug": "pomelo-get-community-funding",
+  "slug_hash": "d6a8e36e098edaadd8d81fe8f599c63724c46b2cd74d9692609375a638dfb7bb",
+  "title": "Pomelo: Get community funding",
+  "description": "Learn about one of the best ways to get community funding on EOS",
+  "episodes": [
+    {
+      "id": "what-is-pomelo",
+      "title": "What is pomelo?",
+      "description": "Get a quick overview of what Pomelo is and how it can benefit you.",
+      "questions": [
+        {
+          "id": "what_type_of_projects_are_allowed",
+          "text": "What projects are allowed?",
+          "possible_answers": {
+            "0": "Closed source projects",
+            "1": "Public goods",
+            "2": "Private goods"
+          }
+        },
+        {
+          "id": "where_do_funds_come_from",
+          "text": "Where does funding come from?",
+          "possible_answers": {
+            "0": "Donations & matching pools",
+            "1": "Public token sales",
+            "2": "NFT launches"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/FXVNax7IgWg",
+      "resources_url": null
+    },
+    {
+      "id": "what-is-a-public-good",
+      "title": "What is a public good?",
+      "description": "Pomelo is for funding public goods, but what are they?",
+      "questions": [
+        {
+          "id": "public_goods_are_available_to_all",
+          "text": "Who are public goods available to?",
+          "possible_answers": {
+            "0": "Some people",
+            "1": "Everyone",
+            "2": "No one"
+          }
+        },
+        {
+          "id": "when_does_a_public_good_run_out",
+          "text": "When does a public good run out?",
+          "possible_answers": {
+            "0": "During christmas",
+            "1": "Never",
+            "2": "A week after launching"
+          }
+        },
+        {
+          "id": "not_a_public_good",
+          "text": "Which of these is NOT a public good?",
+          "possible_answers": {
+            "0": "Developer Tooling",
+            "1": "Decentralized Finance",
+            "2": "Private health insurance"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/7A7T7CBKgSA",
+      "resources_url": null
+    },
+    {
+      "id": "what-is-a-quadratic-funding",
+      "title": "What is a quadratic funding?",
+      "description": "Understanding the quadratic funding will make getting funded easier",
+      "questions": [
+        {
+          "id": "what_is_more_important_quadratic",
+          "text": "Which of the following is more important for quadratic funding?",
+          "possible_answers": {
+            "0": "More contributors",
+            "1": "Higher contributions",
+            "2": "Both"
+          }
+        },
+        {
+          "id": "majority_of_funding",
+          "text": "Where is the majority of funding coming from?",
+          "possible_answers": {
+            "0": "The donations",
+            "1": "The matching pool"
+          }
+        },
+        {
+          "id": "who_decides",
+          "text": "Who decides who gets funds from the matching pool?",
+          "possible_answers": {
+            "0": "Donation contributors",
+            "1": "Matching pool partners",
+            "2": "Pomelo staff"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/GPtSyXs7j24",
+      "resources_url": null
+    },
+    {
+      "id": "creating-a-grant",
+      "title": "Creating a grant on Pomelo",
+      "description": "Let's see how you create a grant using Pomelo",
+      "questions": [
+        {
+          "id": "how_do_you_get_paid",
+          "text": "How does Pomelo pay out?",
+          "possible_answers": {
+            "0": "Credit card",
+            "1": "Bank transfer",
+            "2": "EOS account"
+          }
+        },
+        {
+          "id": "instantly_available",
+          "text": "Will your grant be instantly available?",
+          "possible_answers": {
+            "0": "No, it must first be approved",
+            "1": "Yes"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/rh5DXfyuulU",
+      "resources_url": null
+    }
+  ],
+  "difficulty": 0,
+  "language": "en",
+  "tags": [],
+  "instructor": "EOS Nation",
+  "thumbnail": "",
+  "answers": {
+    "what_type_of_projects_are_allowed": 1,
+    "where_do_funds_come_from": 0,
+    "public_goods_are_available_to_all": 1,
+    "when_does_a_public_good_run_out": 1,
+    "not_a_public_good": 2,
+    "what_is_more_important_quadratic": 0,
+    "majority_of_funding": 1,
+    "who_decides": 0,
+    "how_do_you_get_paid": 2,
+    "instantly_available": 0
+  },
+  "instructor_link": "https://www.youtube.com/@EOSNation"
+}

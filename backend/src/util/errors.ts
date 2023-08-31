@@ -20,8 +20,8 @@ export default class Errors {
         return new CustomError(`user_exists`)
     }
 
-    static invalidUserCreateRequest(){
-        return new CustomError(`malformed_user_create_request_data`)
+    static invalidUserCreateRequest(reason:string = "unknown"){
+        return new CustomError(`malformed_user_create_request_data:${reason}`)
     }
 
     static invalidUserCreateRequestKey(){
@@ -50,6 +50,10 @@ export default class Errors {
 
     static authenticationError(){
         return new CustomError(`authentication_error`)
+    }
+
+    static tokenExpired(){
+        return new CustomError(`token_expired`)
     }
 
 

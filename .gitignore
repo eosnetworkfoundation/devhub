@@ -111,3 +111,5 @@ dist
 *.tar
 *.tar.gz
 *.zip
+
+sensitive/firebase.json

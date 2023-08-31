@@ -152,7 +152,6 @@ describe('Course service tests', () => {
             answers: {'keys-a':1, 'keys-b':1, 'blockchain-a':2, 'blockchain-b':1},
         });
         const created = await CourseService.create(course);
-        console.log(created);
         assert(created instanceof Course, "Did not set course");
     });
 

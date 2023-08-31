@@ -14,11 +14,12 @@ export default class CourseProgressService {
     }
 
     static async set(progress:CourseProgress): Promise<boolean> {
-        return await ORM.update(progress);
+        return await ORM.upsert(progress);
     }
 
     static async getAllForUser(user_id:string): Promise<Array<CourseProgress>> {
-        const progresses = await ORM.query(`SELECT * FROM BUCKET_NAME WHERE doc_type = 'course_progress' AND user_id = '${user_id}'`, CourseProgress);
+        // const progresses = await ORM.query(`SELECT * FROM BUCKET_NAME WHERE doc_type = 'course_progress' AND user_id = '${user_id}'`, CourseProgress);
+        const progresses = await ORM.query(collection => collection.where('doc_type', '==', 'course_progress').where('user_id', '==', user_id), CourseProgress);
         await Promise.all(progresses.map(async progress => {
             progress.course = await CourseService.get(progress.course_slug_hash, true);
         }));
@@ -76,13 +77,11 @@ export default class CourseProgressService {
     }
 
     static async getBadAnswers(course_slug_hash:string, user_id:string): Promise<Array<{ question:string, given_answer:number, correct_answer: number }> | CustomError> {
-        console.log('slug hash', course_slug_hash);
         const course:Course|null = await CourseService.get(course_slug_hash);
         if(!course) return Errors.cantFindCourse();
 
         const progress = await this.get(course_slug_hash, user_id);
         if(!progress) return Errors.cantFindCourseProgress();
-        console.log(course.answers, progress.answers)
 
         const bad_answers: Array<{ question:string, given_answer:number, correct_answer: number }> = [];
         for(let question_id in course.answers) {
@@ -100,7 +99,8 @@ export default class CourseProgressService {
     }
 
     static async getAllFinishedProgresses(): Promise<number> {
-        const progresses = await ORM.query(`SELECT COUNT(*) FROM BUCKET_NAME WHERE doc_type = 'course_progress' AND finished = true`);
+        // const progresses = await ORM.query(`SELECT COUNT(*) FROM BUCKET_NAME WHERE doc_type = 'course_progress' AND finished = true`);
+        const progresses = await ORM.query(collection => collection.where('doc_type', '==', 'course_progress').where('finished', '==', true).count());
         if(!progresses) return 0;
         return progresses[0]['$1'];
     }
