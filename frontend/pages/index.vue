@@ -34,8 +34,8 @@ export default {
   },
   async fetch() {
     let allCourses = await this.$api.getCourses();
-    allCourses = allCourses.courses.concat(allCourses.popular).concat(allCourses.essential);
-    this.courses = allCourses.reduce((acc, course) => {
+    const _courses = allCourses.popular.concat(allCourses.essential).concat(allCourses.courses);
+    this.courses = _courses.reduce((acc, course) => {
       if(acc.find(c => c.slug === course.slug)) return acc;
       acc.push(course);
       return acc;
