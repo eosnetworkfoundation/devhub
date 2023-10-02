@@ -1,6 +1,6 @@
 CREATE INDEX course_progress_agg ON devhub(`finished`,`course_slug_hash`) WHERE doc_type = 'course_progress' USING GSI
-CREATE INDEX idx_challenges ON devhub(doc_type) WHERE doc_type = 'challenge' USING GSI
 CREATE INDEX idx_course_progress ON devhub(doc_type) WHERE doc_type = 'course_progress' USING GSI
 CREATE INDEX course_difficulty ON devhub(`difficulty`) WHERE doc_type = 'course' USING GSI
 CREATE INDEX course_search ON devhub(`title`,`description`) WHERE doc_type = 'course' USING GSI
+CREATE INDEX bounty_search ON devhub(`type`) WHERE doc_type = 'bounty' USING GSI
 CREATE INDEX doctype ON devhub(`doc_type`) USING GSI

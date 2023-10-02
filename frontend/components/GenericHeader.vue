@@ -2,7 +2,7 @@
   <section class="generic-header">
     <section class="inner-container">
       <h1><b>{{ title }}</b></h1>
-      <h3 v-if="subtitle">{{ subtitle }}</h3>
+      <h3>{{ subtitle }}</h3>
 
       <p v-html="text"></p>
 
@@ -22,7 +22,7 @@
       },
       subtitle: {
         type: String,
-        required: false,
+        required: true,
       },
       text: {
         type: String,

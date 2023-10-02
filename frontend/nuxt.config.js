@@ -25,8 +25,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-  '~/plugins/firebase.client',
-  '~/plugins/api.service',
+    '~/plugins/api.service',
     '~/plugins/v-click-outside',
     '~/plugins/common',
   ],
@@ -51,6 +50,22 @@ export default {
   gtm: {
     id: 'GTM-5BZGD5N'
   },
+  auth: {
+    redirect: {
+      login: '/', // redirect user when not connected
+      logout: '/logout',
+      callback: '/'
+    },
+    strategies: {
+      local: false,
+      auth0: {
+        domain: 'devhub.us.auth0.com',
+        clientId: 'C3CbaWj25DapUHSYarwKWAvGT1StkIgM',
+        logoutRedirectUri: 'https://learn.eosnetwork.com',
+        redirectUri: 'https://learn.eosnetwork.com',
+      }
+    }
+  },
 
   publicRuntimeConfig: {
     BACKEND_API: process.env.DEVHUB_BACKEND_API || 'http://localhost:3001'
@@ -58,17 +73,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    postcss: {
-      postcssOptions: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {},
-        },
-      },
-    },
-    transpile: [
-      'defu'
-    ]
   },
 
   markdownit: {

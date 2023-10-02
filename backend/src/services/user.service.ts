@@ -2,7 +2,6 @@ import {User, UserUpdatableFields} from "@eosn/devhub-structures/user";
 import Errors, {CustomError} from "../util/errors";
 import ORM from "../util/orm";
 import {sha256} from "eosjs-ecc";
-import {FireAuth} from "../util/firebase";
 
 export default class UserService {
 
@@ -17,63 +16,26 @@ export default class UserService {
     }
 
     static async create(body:any): Promise<User | CustomError>{
-        if(!body) return Errors.invalidUserCreateRequest();
+        if(!body.hasOwnProperty('key') || !body.key) return Errors.invalidUserCreateRequest();
+        if(!body.hasOwnProperty('user') || !body.user) return Errors.invalidUserCreateRequest();
+        if(body.key !== process.env.USER_CREATE_KEY) return Errors.invalidUserCreateRequestKey();
 
-        const { token } = body;
-        if(!token || !token.length) return Errors.invalidUserCreateRequest();
+        const data = body.user;
+        if(!data.user_id || !data.email || !data.name) return Errors.invalidUserCreateRequest();
+        const user_id = this.subToUserID(data.user_id);
+        if(await this.get(user_id)) return Errors.userExists();
 
-        try {
-            const decodedToken = await FireAuth.decodeToken(token);
+        const user = new User({
+            id:user_id,
+            email:data.email,
+            name:data.name,
+            created_at:+new Date(),
+            graphics:{ avatar: data.picture || null },
+        });
 
-            if(decodedToken === "expired_token") {
-                return Errors.invalidUserCreateRequest('expired_token');
-            }
+        if(!await ORM.update(user)) return Errors.databaseError();
 
-            let {
-                uid,
-                name,
-                picture,
-                email,
-                firebase,
-            } = decodedToken;
-
-            if(!name) name = `User-${Math.round(Math.random() * 1000000000000)}`;
-            if(!picture) picture = '';
-
-            if(!uid || !uid.length) return Errors.invalidUserCreateRequest('invalid_uid');
-
-            if(!firebase) return Errors.invalidUserCreateRequest('invalid_firebase');
-
-            const {
-                sign_in_provider,
-            } = firebase;
-
-            if(!sign_in_provider || !sign_in_provider.length) return Errors.invalidUserCreateRequest('invalid_sign_in_provider');
-            if(!['google.com', 'github.com'].includes(sign_in_provider)) return Errors.invalidUserCreateRequest('invalid_sign_in_provider');
-
-            const id = this.subToUserID(uid);
-
-            const existingUser = await this.get(id);
-            if(existingUser) return existingUser;
-
-
-            const user = new User({
-                id,
-                email,
-                name,
-                created_at:+new Date(),
-                graphics:{ avatar: picture || null },
-            });
-
-            if(!await ORM.upsert(user)) {
-                return Errors.databaseError();
-            }
-
-            return user;
-        } catch (e:any) {
-            console.error(e);
-            return Errors.invalidUserCreateRequest(e.message);
-        }
+        return user;
     }
 
     static async updateUser(user_id:string, data:UserUpdatableFields): Promise<User | CustomError>{
@@ -117,7 +79,7 @@ export default class UserService {
             user.graphics.avatar = data.avatar;
         }
 
-        if(!await ORM.upsert(user)) return Errors.databaseError();
+        if(!await ORM.update(user)) return Errors.databaseError();
 
         return user;
     }

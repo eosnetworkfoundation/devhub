@@ -10,6 +10,11 @@
     "url": "https://eosnetwork.com"
   },
   "license": "MIT",
+  "engineStrict": true,
+  "engines": {
+    "node": "16",
+    "yarn": "1"
+  },
   "scripts": {
     "build": "tsc"
   },
