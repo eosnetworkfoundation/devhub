@@ -1,0 +1,76 @@
+{
+  "doc_type": "course",
+  "created_at": 1670452820900,
+  "slug": "build-a-tamagotchi",
+  "slug_hash": "",
+  "title": "Build a Tamagotchi game",
+  "description": "Build a Tamagotchi game to learn how to use EOS Native C++, SvelteKit and WharfKit",
+  "episodes": [
+    {
+      "id": "tamagotchi",
+      "title": "Build a Tamagotchi game",
+      "description": "Start learning now!",
+      "questions": [
+        {
+          "id": "what_is_a_web_ide",
+          "text": "What is a web IDE?",
+          "possible_answers": {
+            "0": "A web-based integrated development environment (IDE) that is accessed through a web browser.",
+            "1": "A desktop-based integrated development environment (IDE) that is installed on your computer."
+          }
+        },
+        {
+          "id": "what_is_a_table",
+          "text": "What is a TABLE?",
+          "possible_answers": {
+            "0": "Something with 4 legs",
+            "1": "A collection of rows and columns that define a set of data."
+          }
+        },
+        {
+          "id": "what_is_an_action",
+          "text": "What is an ACTION?",
+          "possible_answers": {
+            "0": "Something that the developer does to the user.",
+            "1": "A function on a contract that can be called externally.",
+            "2": "A way to own a contract."
+          }
+        },
+        {
+          "id": "what_is_require_auth",
+          "text": "What is require_auth?",
+          "possible_answers": {
+            "0": "A way to require authentication.",
+            "1": "A way to delegate authorization.",
+            "2": "A way to set an account's authorization."
+          }
+        },
+        {
+          "id": "what_is_the_web_sdk",
+          "text": "What is the JavaScript SDK for EOS called?",
+          "possible_answers": {
+            "0": "WinkleKit",
+            "1": "WaffleKit",
+            "2": "WharfKit"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/OM8vJX91BI8",
+      "resources_url": null
+    }
+  ],
+  "difficulty": 1,
+  "language": "en",
+  "tags": [],
+  "instructor": "Nathan James",
+  "thumbnail": "",
+  "answers": {
+    "what_is_a_web_ide": "0",
+    "what_is_a_table": "1",
+    "what_is_an_action": "1",
+    "what_is_require_auth": "0",
+    "what_is_the_web_sdk": "2"
+  },
+  "instructor_link": "https://docs.eosnetwork.com/"
+}
+

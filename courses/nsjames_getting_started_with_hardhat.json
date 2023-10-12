@@ -1,0 +1,59 @@
+{
+  "doc_type": "course",
+  "created_at": 1684444046381,
+  "slug": "getting-started-with-hardhat",
+  "slug_hash": "c5928a7c9beae77a4c118440769dea6730f8d1b19604eba0ea5603370c7d2424",
+  "title": "Getting started with Hardhat",
+  "description": "Learn how to compile, test, and deploy smart contracts on the EOS EVM using Hardhat.",
+  "episodes": [
+    {
+      "id": "using-hardhat",
+      "title": "Hardhat crash course",
+      "description": "This video tutorial will run you through everything you need to know to deploy contracts on the EOS EVM using hardhat.",
+      "questions": [
+        {
+          "id": "using-hardhat-q1",
+          "text": "How do you initialize a new hardhat project?",
+          "possible_answers": {
+            "a": "npm hardhat",
+            "b": "npx hardhat",
+            "c": "npx hardhat create"
+          }
+        },
+        {
+          "id": "using-hardhat-q2",
+          "text": "How do you test a project?",
+          "possible_answers": {
+            "a": "npm test",
+            "b": "npx test"
+          }
+        },
+        {
+          "id": "using-hardhat-q3",
+          "text": "Where do you put network configurations?",
+          "possible_answers": {
+            "a": "In the hardhat.config.ts file",
+            "b": "In the networks.config.ts file",
+            "c": "In the web app"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/qZid-SzonEY",
+      "resources_url": null
+    }
+  ],
+  "difficulty": 0,
+  "language": "en",
+  "tags": [
+    "hardhat",
+    "evm"
+  ],
+  "instructor": "Nathan James",
+  "thumbnail": "",
+  "answers": {
+    "using-hardhat-q1": "b",
+    "using-hardhat-q2": "b",
+    "using-hardhat-q3": "a"
+  },
+  "instructor_link": "https://www.youtube.com/@nsjames_"
+}

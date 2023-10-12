@@ -1,0 +1,89 @@
+{
+  "doc_type": "course",
+  "created_at": 1670452820900,
+  "slug": "build-a-todont",
+  "slug_hash": "",
+  "title": "Build a TODONT app on EOS EVM",
+  "description": "Tired of building TODO apps? Build a TODONT app!",
+  "episodes": [
+    {
+      "id": "todont",
+      "title": "Build a TODONT app",
+      "description": "Start learning now!",
+      "questions": [
+        {
+          "id": "what_frontend_framework",
+          "text": "What frontend framework is used in this course?",
+          "possible_answers": {
+            "0": "Vue",
+            "1": "Next.js",
+            "2": "SvelteKit"
+          }
+        },
+        {
+          "id": "what_is_an_abi",
+          "text": "What does ABI stand for?",
+          "possible_answers": {
+            "0": "Application Binary Interface",
+            "1": "Application Blockchain Interface",
+            "2": "Arbitrary Blockchain Interface"
+          }
+        },
+        {
+          "id": "what_contract_framework",
+          "text": "What smart contract framework is used in this course?",
+          "possible_answers": {
+            "0": "Truffle",
+            "1": "Hardhat"
+          }
+        },
+        {
+          "id": "what_wallet",
+          "text": "What wallet is used in this course?",
+          "possible_answers": {
+            "0": "TokenPocket",
+            "1": "Breez",
+            "2": "MetaMask"
+          }
+        },
+        {
+          "id": "what_are_mappings",
+          "text": "What are mappings in Solidity?",
+          "possible_answers": {
+            "0": "A way to draw maps",
+            "1": "A key-value container",
+            "2": "A value-function store"
+          }
+        },
+        {
+          "id": "how_data",
+          "text": "What keyword is used to create custom data structures in Solidity?",
+          "possible_answers": {
+            "0": "data",
+            "1": "struct",
+            "2": "var"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/bbSLJy-7tm0",
+      "resources_url": null
+    }
+  ],
+  "difficulty": 1,
+  "language": "en",
+  "tags": [
+    "evm"
+  ],
+  "instructor": "Nathan James",
+  "thumbnail": "",
+  "answers": {
+    "what_frontend_framework": "1",
+    "what_is_an_abi": "0",
+    "what_contract_framework": "1",
+    "what_wallet": "2",
+    "what_are_mappings": "1",
+    "how_data": "1"
+  },
+  "instructor_link": "https://docs.eosnetwork.com/"
+}
+

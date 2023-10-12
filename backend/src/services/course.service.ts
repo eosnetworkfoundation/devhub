@@ -8,6 +8,7 @@ import {sha256} from 'eosjs-ecc';
 // Only return public information to external routes.
 const safeCourses = (course:Promise<Array<Course>>) =>
     course.then(courses => {
+        if(!courses) return [];
         return courses.filter(x => !!x).map(course => course.asPublic())
     });
 
@@ -56,6 +57,8 @@ export default class CourseService {
         course.doc_type = "course";
 
         course = new Course(course);
+
+        console.log('course', course);
 
         const upserted = await this.set(course);
         return upserted ? course : new CustomError("Failed to create course");

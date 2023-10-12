@@ -1,19 +1,14 @@
 <template>
   <section class="dev-alerts-cta">
-    <h2>Sign up for developer alerts</h2>
-    <p><b>Don't be caught with your pants down</b>. Breaking changes will happen. If you want to stay on top of things when they do make sure to sign up for developer alerts emails.</p>
-    <form class="email-form" ref="form" action="https://eosnetwork.us8.list-manage.com/subscribe/post" method="POST">
-      <input type="hidden" name="u" value="d65a053d24b3cc087dfb925bb">
-      <input type="hidden" name="id" value="be3f545626">
-      <input type="hidden" name="orig-lang" value="1">
-      <section class="input">
-        <figure class="icon">
-          <SvgEmail />
-        </figure>
-        <input type="email" placeholder="Enter your email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="">
-      </section>
-      <Button @click.native="submitForm">Alert me</Button>
-    </form>
+    <h2>Boost Your App! 🚀</h2>
+    <p>
+      Submit your app to our ecosystem page and reach a wider audience, gain exposure, and attract new users to your already built application.
+    </p>
+    <a href="https://eosnetwork.com/#ecosystem-intake" target="_blank" rel="noreferrer" className="text-blue-500 hover:underline">
+      <Button type="button">
+        <Translate>INTAKE FORM</Translate>
+      </Button>
+    </a>
   </section>
 </template>
 
