@@ -12,6 +12,7 @@
 <!--        <NuxtLink class="link" to="/discover?type=tools">Discover</NuxtLink>-->
 <!--        <NuxtLink class="link" to="/docs">Docs</NuxtLink>-->
         <a href="https://docs.eosnetwork.com" target="_blank" rel="noopener noreferrer" class="link">Docs</a>
+        <a href="https://eosnetwork.com" target="_blank" rel="noopener noreferrer" class="link">What is EOS?</a>
       </section>
       <section class="account" v-if="loading"></section>
       <section class="account" v-else>
@@ -51,6 +52,7 @@
           <NuxtLink @click.native="hamburgerOpen = false" class="link" to="/earn">Earn</NuxtLink>
           <!--        <NuxtLink @click.native="hamburgerOpen = false" class="link" to="/discover?type=tools">Discover</NuxtLink>-->
           <a href="https://docs.eosnetwork.com"  target="_blank" rel="noopener noreferrer" @click.native="hamburgerOpen = false" class="link">Docs</a>
+          <a href="https://eosnetwork.com"  target="_blank" rel="noopener noreferrer" @click.native="hamburgerOpen = false" class="link">What is EOS?</a>
         </section>
       </section>
     </nav>
