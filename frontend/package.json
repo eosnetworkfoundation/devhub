@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "EOS Network Foundation DevHub portal website frontend",
   "repository": "https://github.com/eosnetworkfoundation/devhub",
   "homepage": "https://learn.eosnetwork.com",
@@ -12,10 +12,6 @@
   "license": "MIT",
   "private": true,
   "engineStrict": true,
-  "engines": {
-    "node": "16",
-    "yarn": "1"
-  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
