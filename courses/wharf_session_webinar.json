@@ -1,0 +1,210 @@
+{
+  "doc_type": "course",
+  "created_at": 1697813882187,
+  "slug": "introducing-wharf-sessionkit-overview",
+  "slug_hash": "545c2535508a15174b2e30a9fcbf935781030cd6b7e171b19e2e2301c54ddbb1",
+  "title": "Introducing Wharf: SessionKit & Overview",
+  "description": "Learn about EOS' new JavaScript SDK, and how it can help you build better web3 apps!",
+  "episodes": [
+    {
+      "id": "overview",
+      "title": "Wharf Overview",
+      "description": "Get a primer about the Wharf SDK before diving deeper",
+      "questions": [
+        {
+          "id": "what-is-sessionkit",
+          "text": "What is the SessionKit?",
+          "possible_answers": {
+            "a": "Manages your user's sessions",
+            "b": "Manages your dog's wallets",
+            "c": "Manages a company's funds"
+          }
+        },
+        {
+          "id": "what-is-contractkit",
+          "text": "What is the ContractKit?",
+          "possible_answers": {
+            "a": "Helps you interact with wallets",
+            "b": "Helps you interact with custom contracts",
+            "c": "Takes out the trash"
+          }
+        },
+        {
+          "id": "what-is-accountkit",
+          "text": "What is the AccountKit?",
+          "possible_answers": {
+            "a": "Helps you interact with the system contracts",
+            "b": "Helps you deploy contracts",
+            "c": "Helps you interact with custom contracts"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/vtkIj21a5aI",
+      "resources_url": null
+    },
+    {
+      "id": "what-is-a-session",
+      "title": "What is a session?",
+      "description": "Dig into what a session is, and why it's important",
+      "questions": [
+        {
+          "id": "what-do-you-authenticate-against",
+          "text": "What do you authenticate against in blockchain?",
+          "possible_answers": {
+            "a": "Your centralized database",
+            "b": "Google",
+            "c": "Wharf"
+          }
+        },
+        {
+          "id": "when-authenticated-request",
+          "text": "When do you need to do an authenticated request?",
+          "possible_answers": {
+            "a": "When you need to read data from the blockchain",
+            "b": "When you need to sign a transaction"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/dSgs_o3lNY4",
+      "resources_url": null
+    },
+    {
+      "id": "session-composition",
+      "title": "Session composition",
+      "description": "Learn about the different parts of a session",
+      "questions": [
+        {
+          "id": "what-are-the-components-of-a-session",
+          "text": "What are the components of a session?",
+          "possible_answers": {
+            "a": "Database, account, and login",
+            "b": "Blockchain and key",
+            "c": "Blockchain, account, and signer"
+          }
+        },
+        {
+          "id": "what-is-a-signer",
+          "text": "What is a signer?",
+          "possible_answers": {
+            "a": "Something that can sign a transaction and return a signature",
+            "b": "Something that can sign docusign documents",
+            "c": "Someone who signs off on your work"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/_RPb1QTAsw0",
+      "resources_url": null
+    },
+    {
+      "id": "how-to-session",
+      "title": "How to make a session",
+      "description": "Learn how to make a session",
+      "questions": [
+        {
+          "id": "ways-to-make-a-session",
+          "text": "What are the two ways to make a session?",
+          "possible_answers": {
+            "a": "By passing in a contract",
+            "b": "Either manually, or by logging a user into the SessionKit",
+            "c": "By turning off your computer"
+          }
+        },
+        {
+          "id": "can-connect-many",
+          "text": "Can you connect to many blockchains at once?",
+          "possible_answers": {
+            "a": "Yes",
+            "b": "No"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/Ea8VBN4ekAE",
+      "resources_url": null
+    },
+    {
+      "id": "integration",
+      "title": "Integrating wharf in a web app",
+      "description": "Watch a demo of how to integrate wharf into a web app",
+      "questions": [
+        {
+          "id": "what-deps",
+          "text": "What dependencies are required?",
+          "possible_answers": {
+            "a": "None",
+            "b": "only @wharfkit/session",
+            "c": "@wharfkit/session, @wharfkit/web-renderer, wallet plugins"
+          }
+        },
+        {
+          "id": "what-login",
+          "text": "What SessionKit method do you call to login a user?",
+          "possible_answers": {
+            "a": "login",
+            "b": "logout",
+            "c": "connect"
+          }
+        },
+        {
+          "id": "what-transact",
+          "text": "What SessionKit method do you call to send a transaction to the blockchain?",
+          "possible_answers": {
+            "a": "transfer",
+            "b": "interact",
+            "c": "transact"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/ZAVvOcLN5C8",
+      "resources_url": null
+    },
+    {
+      "id": "q-and-a",
+      "title": "Q&A Session",
+      "description": "Learn from questions asked by the community",
+      "questions": [
+        {
+          "id": "where-support",
+          "text": "Where are the best places to get support?",
+          "possible_answers": {
+            "a": "Github discussions, or wharf telegram group",
+            "b": "Calling Aaron on his landline at 2:17 am"
+          }
+        },
+        {
+          "id": "what-harm",
+          "text": "Does wharf store any harmful information in the browser?",
+          "possible_answers": {
+            "a": "Yes",
+            "b": "No"
+          }
+        }
+      ],
+      "video_url": "https://www.youtube.com/embed/3q73FkwlKII",
+      "resources_url": null
+    }
+  ],
+  "difficulty": 1,
+  "language": "en",
+  "tags": [
+    "native"
+  ],
+  "instructor": "Aaron Cox | Greymass",
+  "instructor_link": "https://wharfkit.com/",
+  "thumbnail": "",
+  "answers": {
+    "what-is-sessionkit": "a",
+    "what-is-contractkit": "b",
+    "what-is-accountkit": "a",
+    "what-do-you-authenticate-against": "c",
+    "when-authenticated-request": "a",
+    "what-are-the-components-of-a-session": "c",
+    "what-is-a-signer": "a",
+    "ways-to-make-a-session": "b",
+    "can-connect-many": "a",
+    "what-deps": "c",
+    "what-login": "a",
+    "what-transact": "c",
+    "where-support": "a",
+    "what-harm": "b"
+  }
+}
