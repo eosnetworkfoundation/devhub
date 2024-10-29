@@ -2,11 +2,11 @@
   <section class="learn-header">
     <section class="cta-container">
       <section class="padder">
-        <h1><b>Learn<br/>& Earn</b></h1>
+        <h1><b>Learn To Code</b></h1>
 
         <p>
           <b>Learn web3 development and change your life.</b>
-          We not only make it easy to learn, but also provide ways for you to instantly utilize your new skills to earn money.
+          We not only make it easy to learn, but also provide ways for you to instantly utilize your new skills.
         </p>
 
         <section class="buttons">
