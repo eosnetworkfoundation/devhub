@@ -2,7 +2,7 @@
   <section class="learn-header">
     <section class="cta-container">
       <section class="padder">
-        <h1><b>Learn To Code</b></h1>
+        <h1><b>Learn Web3</b></h1>
 
         <p>
           <b>Learn web3 development and change your life.</b>
